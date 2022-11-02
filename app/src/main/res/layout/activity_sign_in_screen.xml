@@ -1,15 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInScreen">
+    android:layout_width="match_parent"
+    android:background="#008F6D"
+    android:orientation="vertical">
 
-    <View   android:id="@+id/_bg__log_in_screen"
-        android:background="008F6D"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_width="360dp"
-        android:layout_height="760dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to"
+        android:layout_gravity="center"
+        android:textSize="32dp"
+        android:translationY="90dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FANTASYMess!"
+        android:layout_gravity="center"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:translationY="90dp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:background="#316353"
+        android:textSize="24dp"
+        android:paddingLeft="10dp"
+        android:translationY="130dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="USERNAME"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:background="#316353"
+        android:textSize="24dp"
+        android:paddingLeft="10dp"
+        android:layout_gravity="center"
+        android:translationY="170dp"
+        android:text="PASSWORD"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:translationY="250dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#D9D9D9"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Log In" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:translationY="300dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#D9D9D9"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Sign Up" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
