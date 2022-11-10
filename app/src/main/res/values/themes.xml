@@ -15,6 +15,6 @@
     </style>
 
     <style name="Theme.FantasyBasketballProjectNew" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="background">#008F6D</item>
+        <item name="background">@color/backgroundColor</item>
     </style>
 </resources>
