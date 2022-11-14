@@ -8,7 +8,7 @@
     android:background="#008F6D">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/checkRoster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D9D9D9"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D9D9D9"
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.693" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/enterDraft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D9D9D9"
