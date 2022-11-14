@@ -3,9 +3,13 @@ package com.example.fantasybasketballproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class SignInScreen extends AppCompatActivity {
+
+    Button login;
+    Button signup;
 
     EditText username;
     EditText password;
@@ -17,6 +21,12 @@ public class SignInScreen extends AppCompatActivity {
 
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+
+        login = findViewById(R.id.login);
+        signup = findViewById(R.id.signup);
+
+
+
     }
 
 }

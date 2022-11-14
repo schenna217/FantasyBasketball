@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "272557508840",
+    "project_id": "fantasy-basketball-fdf53",
+    "storage_bucket": "fantasy-basketball-fdf53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272557508840:android:e5958608f62ff6918c215d",
+        "android_client_info": {
+          "package_name": "com.example.fantasybasketballproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272557508840-3c29noulr7mbn71a1g42qrr61v036crv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA60fQ6rl1tEHsr87p1m-51MENTyoVwHJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272557508840-3c29noulr7mbn71a1g42qrr61v036crv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
