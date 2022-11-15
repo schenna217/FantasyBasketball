@@ -6,27 +6,27 @@ import android.os.Parcelable;
 public class Player implements Parcelable {
     private int rating;
     private String name;
-    private String desc;
+    private String position;
     private String docID;
 
-    public Player(int rating, String name, String desc, String docID) {
+    public Player(int rating, String name, String position, String docID) {
         this.rating = rating;
         this.name = name;
-        this.desc = desc;
+        this.position = position;
         this.docID = docID;
     }
 
-    public Player(int rating, String name, String desc) {
+    public Player(int rating, String name, String position) {
         this.rating = rating;
         this.name = name;
-        this.desc = desc;
+        this.position = position;
         this.docID = "No docID yet.";
     }
 
     public Player() {
         this.rating = 0;
         this.name = "";
-        this.desc = "";
+        this.position = "";
         this.docID = "";
     }
 
@@ -52,7 +52,7 @@ public class Player implements Parcelable {
     public Player(Parcel parcel) {
         rating = parcel.readInt();
         name = parcel.readString();
-        desc = parcel.readString();
+        position = parcel.readString();
         docID = parcel.readString();
     }
 
@@ -60,7 +60,7 @@ public class Player implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(rating);
         dest.writeString(name);
-        dest.writeString(desc);
+        dest.writeString(position);
         dest.writeString(docID);
     }
 
@@ -85,12 +85,12 @@ public class Player implements Parcelable {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getposition() {
+        return position;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setposition(String position) {
+        this.position = position;
     }
 
     public String getDocID() {
