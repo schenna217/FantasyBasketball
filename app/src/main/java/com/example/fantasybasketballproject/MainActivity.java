@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imageView = findViewById(R.id.imageView);
 
-        Picasso.get().load("https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg")
+        Picasso.get().load("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/1629632.png")
                 .into(imageView);
 
 //        Picasso.with(this)

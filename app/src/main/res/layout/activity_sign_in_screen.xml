@@ -59,14 +59,14 @@
         android:id="@+id/login"
         android:layout_width="175dp"
         android:layout_height="60dp"
-        android:translationY="250dp"
         android:layout_gravity="center"
         android:backgroundTint="#D9D9D9"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20dp"
+        android:onClick="logInClicked"
         android:text="Log In"
-        android:onClick="logInClicked"/>
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:translationY="250dp" />
 
     <Button
         android:id="@+id/signup"
