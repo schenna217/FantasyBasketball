@@ -17,19 +17,16 @@ public class ActivePlayerHome extends AppCompatActivity {
     }
 
     public void switchScreens(View view) {
-        Button enterDraft = findViewById(R.id.enterDraft);
-        Intent intent = new Intent(this, ReadyToDraft.class);
+        Intent intent = new Intent(this, FirstRound.class);
         startActivity(intent);
     }
 
     public void switchScreensRoster(View view) {
-        Button roster = findViewById(R.id.checkRoster);
         Intent intent = new Intent(this, Roster.class);
         startActivity(intent);
     }
 
     public void switchScreensBack(View view) {
-        Button logout = findViewById(R.id.logout);
         Intent intent = new Intent(this, SignInScreen.class);
         startActivity(intent);
     }
