@@ -30,6 +30,7 @@
         android:textColor="@color/white"/>
 
     <EditText
+        android:id="@+id/SUemail"
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:background="#316353"
@@ -42,6 +43,7 @@
         android:textColor="@color/white"/>
 
     <EditText
+        android:id="@+id/SUusername"
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:background="#316353"
@@ -54,6 +56,7 @@
         android:textColor="@color/white"/>
 
     <EditText
+        android:id="@+id/SUpassword"
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:background="#316353"

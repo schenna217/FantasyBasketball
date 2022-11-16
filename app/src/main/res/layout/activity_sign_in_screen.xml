@@ -65,7 +65,8 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:text="Log In" />
+        android:text="Log In"
+        android:onClick="logInClicked"/>
 
     <Button
         android:id="@+id/signup"
@@ -77,7 +78,8 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:text="Sign Up" />
+        android:text="Sign Up"
+        android:onClick="signUpClicked"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
