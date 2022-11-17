@@ -47,7 +47,7 @@ public class SignInScreen extends AppCompatActivity {
 
     }
 
-    public void signUpClicked(View view) {
+    public void signUpClickedInitial(View view) {
         Log.i(TAG, "Sign up clicked");
         Intent intent = new Intent(SignInScreen.this, SignUpScreen.class);
         startActivity(intent);
