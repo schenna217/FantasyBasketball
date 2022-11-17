@@ -15,10 +15,8 @@ public class FirstRound extends AppCompatActivity {
         setContentView(R.layout.activity_first_round);
     }
 
-    //public ImageButton placePlayers(){
-        //ArrayList <>
-    //}
 
+    
 
 
 
