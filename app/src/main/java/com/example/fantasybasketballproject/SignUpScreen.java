@@ -41,11 +41,7 @@ public class SignUpScreen extends AppCompatActivity {
         usernameET = findViewById(R.id.SUusername);
         passwordET = findViewById(R.id.SUpassword);
 
-        signup = findViewById(R.id.signup);
-
-        email = emailET.toString();
-        username = usernameET.toString();
-        password = passwordET.toString();
+        signup = findViewById(R.id.SUsignup);
     }
 
     public void signUpClicked(View view) {
@@ -107,9 +103,10 @@ public class SignUpScreen extends AppCompatActivity {
     private boolean getValues() {
         username = usernameET.getText().toString();
         password = passwordET.getText().toString();
+        email = emailET.getText().toString();
 
         // verify all user data is entered
-        if (username.length() == 0 || password.length() == 0) {
+        if (username.length() == 0 || password.length() == 0 || email.length() == 0) {
             Toast.makeText(getApplicationContext(), "Enter all fields", Toast.LENGTH_SHORT).show();
             return false;
         }

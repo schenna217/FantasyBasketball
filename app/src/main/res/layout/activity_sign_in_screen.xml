@@ -12,48 +12,52 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to"
         android:layout_gravity="center"
+        android:fontFamily="@font/bm_hanna"
+        android:text="Welcome to"
+        android:textColor="@color/white"
         android:textSize="32dp"
-        android:translationY="90dp"
-        android:textColor="@color/white"/>
+        android:translationY="90dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FANTASYMess!"
         android:layout_gravity="center"
+        android:fontFamily="@font/esp_ital"
+        android:text="FANTASYMess!"
+        android:textColor="@color/white"
         android:textSize="36dp"
         android:textStyle="bold"
-        android:translationY="90dp"
-        android:textColor="@color/white"/>
+        android:translationY="90dp" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="303dp"
         android:layout_height="50dp"
-        android:background="#316353"
-        android:textSize="24dp"
-        android:paddingLeft="10dp"
-        android:translationY="130dp"
         android:layout_gravity="center"
-        android:textStyle="bold"
+        android:background="#316353"
+        android:fontFamily="@font/bm_hanna"
         android:hint="USERNAME"
-        android:textColor="@color/white"/>
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationY="130dp" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="303dp"
         android:layout_height="50dp"
-        android:background="#316353"
-        android:textSize="24dp"
-        android:paddingLeft="10dp"
         android:layout_gravity="center"
-        android:translationY="170dp"
+        android:background="#316353"
+        android:fontFamily="@font/bm_hanna"
         android:hint="PASSWORD"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textSize="24dp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:translationY="170dp" />
 
     <Button
         android:id="@+id/login"
@@ -61,6 +65,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:backgroundTint="#D9D9D9"
+        android:fontFamily="@font/esp_ital"
         android:onClick="logInClicked"
         android:text="Log In"
         android:textColor="@color/black"
@@ -72,14 +77,15 @@
         android:id="@+id/signup"
         android:layout_width="175dp"
         android:layout_height="60dp"
-        android:translationY="300dp"
         android:layout_gravity="center"
         android:backgroundTint="#D9D9D9"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20dp"
+        android:fontFamily="@font/esp_ital"
+        android:onClick="signUpClickedInitial"
         android:text="Sign Up"
-        android:onClick="signUpClickedInitial"/>
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:translationY="300dp" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
