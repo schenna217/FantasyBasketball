@@ -2,6 +2,7 @@ package com.example.fantasybasketballproject;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
 
 public class Player implements Parcelable {
     private int rating;
@@ -64,6 +65,8 @@ public class Player implements Parcelable {
         dest.writeString(docID);
     }
 
+ 
+
     @Override
     public int describeContents() {
         return 0;
@@ -100,4 +103,7 @@ public class Player implements Parcelable {
     public void setdocID(String docID) {
         this.docID = docID;
     }
+
 }
+
+
