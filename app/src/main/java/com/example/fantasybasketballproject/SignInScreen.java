@@ -36,21 +36,87 @@ public class SignInScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_screen);
 
+        firebaseHelper = new FirebaseHelper();
+
         usernameET = findViewById(R.id.username);
         passwordET = findViewById(R.id.password);
 
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);
 
-        username = usernameET.toString();
-        password = passwordET.toString();
-
     }
 
-    public void signUpClickedInitial(View view) {
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        updateUI();
+    }
+
+    public void updateUI() {
+        // if the user is already logged in, then they bypass this screen
+        Log.d(TAG, "inside updateUI: " + firebaseHelper.getmAuth().getUid());
+        if (firebaseHelper.getmAuth().getUid() != null) {
+            firebaseHelper.attachReadDataToUser();
+            Intent intent = new Intent(SignInScreen.this, ReadyToDraft.class);
+            startActivity(intent);
+        }
+    }
+
+    public void signUpClicked(View view) {
         Log.i(TAG, "Sign up clicked");
-        Intent intent = new Intent(SignInScreen.this, SignUpScreen.class);
-        startActivity(intent);
+        if (getValues()) {      // get username and password
+            // Try to create an account using auth
+            firebaseHelper.getmAuth().createUserWithEmailAndPassword(username, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            // FOR SOME REASON IF THE CREATE USER IS NOT WORKING, THIS IS CRASHING
+                            // NOT SURE WHY?  I TRIED WITH A DUPLICATE EMAIL ADDRESS AND THAT CRASHED IT.
+                            // LOGCAT SHOWED THE MESSAGE BUT I COULDN'T GET IT TO SHOW IN A LOG STATEMENT
+
+                            if (task.isSuccessful()){
+                                // Sign up successful, update UI with the currently signed in user's info
+                                firebaseHelper.updateUid(firebaseHelper.getmAuth().getUid());
+                                Log.d(TAG, username + " created and logged in");
+
+                                firebaseHelper.addUserToFirestore(username,
+                                        firebaseHelper.getmAuth().getUid());
+                                firebaseHelper.attachReadDataToUser();
+
+
+                                Intent intent = new Intent(SignInScreen.this, ReadyToDraft.class);
+                                startActivity(intent);
+                            }
+                            else {
+                                /*
+                                    This prevents the app from CRASHING when the user enters bad items
+                                    (duplicate email or badly formatted email most likely)
+
+                                    https://stackoverflow.com/questions/37859582/how-to-catch-a-firebase-auth-specific-exceptions
+
+                                */
+                                try {
+                                    throw task.getException();
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    // poorly formatted email address
+                                    Toast.makeText(SignInScreen.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Sign up failed for " + username + " " + password + e.getMessage());
+                                } catch (FirebaseAuthEmailException e) {
+                                    // duplicate email used
+                                    Toast.makeText(SignInScreen.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Sign up failed for " + username + " " + password + e.getMessage());
+                                } catch (Exception e) {
+                                    Toast.makeText(SignInScreen.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, "Sign up failed for " + username + " " + password + e.getMessage());
+                                }
+                            }
+                        }
+                    });
+        }
+        else {
+            Log.d(TAG, "Failed to pass getValues() method");
+        }
     }
 
     public void logInClicked(View view) {
