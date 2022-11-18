@@ -17,8 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imageView = findViewById(R.id.imageView);
 
+//<<<<<<< Updated upstream
         Picasso.get().load("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203507.png")
                .into(imageView);
+//=======
+//        Picasso.get().load("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/1629630.png")
+//                .into(imageView);
+//>>>>>>> Stashed changes
 
 //        Picasso.with(this)
 //                .load("https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg")
