@@ -80,7 +80,7 @@
         android:layout_gravity="center"
         android:backgroundTint="#D9D9D9"
         android:fontFamily="@font/esp_ital"
-        android:onClick="signUpClickedInitial"
+        android:onClick="signUpClicked"
         android:text="Sign Up"
         android:textColor="@color/black"
         android:textSize="20dp"
