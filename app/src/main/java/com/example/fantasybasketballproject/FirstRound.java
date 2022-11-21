@@ -15,8 +15,8 @@ public class FirstRound extends AppCompatActivity {
         setContentView(R.layout.activity_first_round);
     }
 
-
-    
+//    ArrayList<String> cars = new ArrayList<String>();
+//    cars.add("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203507.png");
 
 
 
