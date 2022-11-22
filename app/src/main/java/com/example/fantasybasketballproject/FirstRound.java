@@ -13,10 +13,13 @@ public class FirstRound extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
+
+        ArrayList<String> playerList = new ArrayList<String>();
+        playerList.add("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203507.png");
+        
     }
 
-//    ArrayList<String> cars = new ArrayList<String>();
-//    cars.add("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203507.png");
+
 
 
 
