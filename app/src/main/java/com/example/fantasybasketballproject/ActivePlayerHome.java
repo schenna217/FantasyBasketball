@@ -16,8 +16,8 @@ public class ActivePlayerHome extends AppCompatActivity {
         setContentView(R.layout.activity_active_player_home);
     }
 
-    public void switchScreens(View view) {
-        Intent intent = new Intent(this, FirstRound.class);
+    public void switchToBreakout(View view) {
+        Intent intent = new Intent(this, BreakoutRoom.class);
         startActivity(intent);
     }
 

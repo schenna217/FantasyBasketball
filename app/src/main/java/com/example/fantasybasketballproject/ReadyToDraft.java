@@ -15,7 +15,7 @@ public class ReadyToDraft extends AppCompatActivity {
         setContentView(R.layout.activity_ready_to_draft);
     }
     public void pressOk(View view){
-        Intent intent = new Intent(ReadyToDraft.this, FirstRound.class);
+        Intent intent = new Intent(ReadyToDraft.this, BreakoutRoom.class);
         startActivity(intent);
     }
     public void notReadyToDraft(View view) {
