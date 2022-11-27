@@ -33,7 +33,7 @@ public class BreakoutRoom extends AppCompatActivity {
 
     public void joinRoom(View view)
     {
-
+        myRef.child("Room" + roomNum).child("User List").push().setValue("Hello");
     }
     public void createRoom(View view)
     {
