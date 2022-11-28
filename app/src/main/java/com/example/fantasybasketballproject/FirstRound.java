@@ -16,6 +16,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FirstRound extends AppCompatActivity {
+    private int A = 1630163;
+    private int Lillard = 203081;
+    private int Irving = 202681;
+    private int Garland = 1629636;
+    private int Morant = 1629630;
+    private int Young = 1629607;
+    private int Doncic = 1629029;
+    private int Curry = 201939;
+    private int Paul = 101108;
+    private int Giannis = 203507;
+
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
     int roomNum = 0;
@@ -27,8 +39,12 @@ public class FirstRound extends AppCompatActivity {
         setContentView(R.layout.activity_first_round);
 
         ArrayList<String> playerList = new ArrayList<String>();
-        playerList.add("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203507.png");
+        String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
+        String P2 = ".png";
         draftList = new ArrayList<>();
+
+    }
+    public void arrangePlayers(){
 
     }
     public void draftFunction(View view) {
@@ -53,6 +69,7 @@ public class FirstRound extends AppCompatActivity {
         myRef.child("Room " + roomNum).child("Player List").setValue(playerList);
 
     }
+
 
 
 
