@@ -52,22 +52,10 @@ public class FirstRound extends AppCompatActivity {
             roomNum = Integer.parseInt(value);
         }
     }
+    public void updateTurn(View view)
+    {
 
-    ValueEventListener postListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            // Get Post object and use the values to update the UI
-            Post post = dataSnapshot.getValue(Post.class);
-            // ..
-        }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-            // Getting Post failed, log a message
-            Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-        }
-    };
-mPostReference.addValueEventListener(postListener);
+    }
     public void arrangePlayers(){
     }
     public void draftFunction(View view) {
