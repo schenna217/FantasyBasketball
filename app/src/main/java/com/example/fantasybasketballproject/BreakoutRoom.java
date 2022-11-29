@@ -34,10 +34,14 @@ public class BreakoutRoom extends AppCompatActivity {
     public void joinRoom(View view)
     {
         myRef.child("Room" + roomNum).child("User List").push().setValue("Hello");
+        Intent i = new Intent(BreakoutRoom.this, FirstRound.class);
+        i.putExtra("key",roomNum);
+        startActivity(i);
     }
     public void createRoom(View view)
     {
         myRef.child("Room " + roomNum).child("Player List").setValue(playerList);
+        joinRoom(view);
     }
     public void room1(View view)
     {
