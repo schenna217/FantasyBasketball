@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 //                .into(imageView);
 //    }
 //
-//    String lebron = "123456";
-//    String curry = "234567";
-//    String giannis = "345678";
+    String lebron = "123456";
+    String curry = "234567";
+    String giannis = "345678";
 //
 //    ArrayList<String> playerNumbers = new ArrayList<String>();
 //
@@ -57,9 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private int Giannis = 203507;
 
     List<String> playerList =  Arrays.asList("Beal","Booker", "Murray");
-    List<String> draftList;
 
-    List<Integer> test = Arrays.asList(A, Lillard, Irving);
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,4 +71,5 @@ public class MainActivity extends AppCompatActivity {
         draftList = new ArrayList<>();
 
     }
+
 }
