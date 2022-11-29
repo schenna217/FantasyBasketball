@@ -3,37 +3,59 @@ package com.example.fantasybasketballproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SecondRound extends AppCompatActivity {
-    private int Ball = 1630163;
-    private int Lillard = 203081;
-    private int Irving = 202681;
-    private int Garland = 1629636;
-    private int Morant = 1629630;
-    private int Young = 1629607;
-    private int Doncic = 1629029;
-    private int Curry = 201939;
-    private int Paul = 101108;
-    private int Giannis = 203507;
+    private String Ball = "1630163";
+    private String Lillard = "203081";
+    private String Irving = "202681";
+    private String Garland = "1629636";
+    private String Morant = "1629630";
+    private String Young = "1629607";
+    private String Doncic = "1629029";
+    private String Curry = "201939";
+    private String Paul = "101108";
+    private String Giannis = "203507";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_round);
-        ArrayList<Integer> playerList = new ArrayList<Integer>();
-        String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
-        String P2 = ".png";
-        playerList.add(Ball);
-        playerList.add(Lillard);
-        playerList.add(Irving);
-        playerList.add(Garland);
-        playerList.add(Morant);
-        playerList.add(Young);
-        playerList.add(Doncic);
-        playerList.add(Curry);
-        playerList.add(Giannis);
+        List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland);
+
+        List<String> imageLinks = new ArrayList<String>();
+
+        for(String i: playerList){
+            String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
+            String P2 = ".png";
+
+            String createdLink = P1 + i + ".png";
+
+
+            imageLinks.add(createdLink);
+        }
+        int[] randNums = new int[16];
+
+
+        for(String i: imageLinks) {
+
+//            Picasso.get().load(i).into(imageView);
+        }
+
+
+
     }
+//    public int randomizeImages(){
+//        for(int i = 0; i < 16; i++){
+//
+//        }
+//    }
 //    public void arrangePlayers(){
 //       int[] randPlayers = new int[];
 //       randPlayers =
