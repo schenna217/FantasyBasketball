@@ -9,7 +9,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class SecondRound extends AppCompatActivity {
     private String Ball = "1630163";
@@ -40,25 +42,20 @@ public class SecondRound extends AppCompatActivity {
 
             imageLinks.add(createdLink);
         }
-        int[] randNums = new int[16];
 
 
+      for(int k = 1; k < 17; k++)
         for(String i: imageLinks) {
-
-//            Picasso.get().load(i).into(imageView);
+            Picasso.get().load(i).into(imageView + "k" );
         }
 
 
 
     }
-//    public int randomizeImages(){
-//        for(int i = 0; i < 16; i++){
-//
-//        }
-//    }
-//    public void arrangePlayers(){
-//       int[] randPlayers = new int[];
-//       randPlayers =
-//
-//    }
+    public void arrangePlayers(){
+        Integer[] sixtNums = new Integer[16];
+        List<Integer> sixtNumsList = Arrays.asList(sixtNums);
+        Collections.shuffle(sixtNumsList);
+    }
+
 }
