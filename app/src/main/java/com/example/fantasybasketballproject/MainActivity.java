@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<String> playerList =  Arrays.asList("Beal","Booker", "Murray");
 
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> playerList = new ArrayList<String>();
         String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
         String P2 = ".png";
-        draftList = new ArrayList<>();
+        //draftList = new ArrayList<>();
 
     }
 

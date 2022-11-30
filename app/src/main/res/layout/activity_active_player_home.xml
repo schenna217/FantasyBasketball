@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivePlayerHome"
-    android:background="#008F6D">
+    android:background="#008F6D"
+    android:theme="@style/Theme.FantasyBasketballProject">
 
     <Button
         android:id="@+id/checkRoster"
