@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class SecondRound extends AppCompatActivity {
     private String Ball = "1630163";
@@ -48,10 +47,10 @@ public class SecondRound extends AppCompatActivity {
 
         Integer[] sixtNums = new Integer[16];
         List<Integer> sixtNumsList = Arrays.asList(sixtNums);
-        Collections.shuffle(sixtNumsList);
         List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland);
 
         List<String> imageLinks = new ArrayList<String>();
+        Collections.shuffle(imageLinks);
 
         for(String i: playerList){
             String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
@@ -67,12 +66,27 @@ public class SecondRound extends AppCompatActivity {
       for(int k = 0; k < sixtNumsList.size(); k++)
         for(String i: imageLinks) {
             Picasso.get().load(i).into(image);
+            Picasso.get().load(i+1).into(image1);
+            Picasso.get().load(i+2).into(image2);
+            Picasso.get().load(i+3).into(image3);
+            Picasso.get().load(i+4).into(image4);
+            Picasso.get().load(i+5).into(image5);
+            Picasso.get().load(i+6).into(image6);
+            Picasso.get().load(i+7).into(image7);
+            Picasso.get().load(i+8).into(image8);
+            Picasso.get().load(i+9).into(image9);
+            Picasso.get().load(i+10).into(image10);
+            Picasso.get().load(i+11).into(image11);
+            Picasso.get().load(i+12).into(image12);
+            Picasso.get().load(i+13).into(image13);
+            Picasso.get().load(i+14).into(image14);
+            Picasso.get().load(i+15).into(image15);
         }
 
 
 
-    }
 
     }
 
-}
+    }
+
