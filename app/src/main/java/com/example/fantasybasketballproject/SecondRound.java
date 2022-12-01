@@ -29,6 +29,26 @@ public class SecondRound extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_round);
+        ImageView image = (ImageView)findViewById(R.id.imageView);
+        ImageView image1 = (ImageView)findViewById(R.id.imageView1);
+        ImageView image2 = (ImageView)findViewById(R.id.imageView2);
+        ImageView image3 = (ImageView)findViewById(R.id.imageView3);
+        ImageView image4 = (ImageView)findViewById(R.id.imageView4);
+        ImageView image5 = (ImageView)findViewById(R.id.imageView5);
+        ImageView image6 = (ImageView)findViewById(R.id.imageView6);
+        ImageView image7 = (ImageView)findViewById(R.id.imageView7);
+        ImageView image8 = (ImageView)findViewById(R.id.imageView8);
+        ImageView image9 = (ImageView)findViewById(R.id.imageView9);
+        ImageView image10 = (ImageView)findViewById(R.id.imageView10);
+        ImageView image11 = (ImageView)findViewById(R.id.imageView11);
+        ImageView image12 = (ImageView)findViewById(R.id.imageView12);
+        ImageView image13 = (ImageView)findViewById(R.id.imageView13);
+        ImageView image14 = (ImageView)findViewById(R.id.imageView14);
+        ImageView image15 = (ImageView)findViewById(R.id.imageView15);
+
+        Integer[] sixtNums = new Integer[16];
+        List<Integer> sixtNumsList = Arrays.asList(sixtNums);
+        Collections.shuffle(sixtNumsList);
         List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland);
 
         List<String> imageLinks = new ArrayList<String>();
@@ -44,18 +64,15 @@ public class SecondRound extends AppCompatActivity {
         }
 
 
-      for(int k = 1; k < 17; k++)
+      for(int k = 0; k < sixtNumsList.size(); k++)
         for(String i: imageLinks) {
-            Picasso.get().load(i).into(imageView + "k" );
+            Picasso.get().load(i).into(image);
         }
 
 
 
     }
-    public void arrangePlayers(){
-        Integer[] sixtNums = new Integer[16];
-        List<Integer> sixtNumsList = Arrays.asList(sixtNums);
-        Collections.shuffle(sixtNumsList);
+
     }
 
 }

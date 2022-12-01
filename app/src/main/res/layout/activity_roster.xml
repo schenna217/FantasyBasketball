@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Roster"
-    android:background="#008F6D">
+    android:background="@color/babyPowder">
 
     <Button
         android:id="@+id/button12"
