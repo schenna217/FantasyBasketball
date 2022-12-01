@@ -5,14 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BreakoutRoom"
-    android:background="@color/babyPowder">
+    android:theme="@style/Theme.FantasyBasketballProject">
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D9D9D9"
-        android:textColor="@color/black"
         android:text="Room 1"
         android:onClick="room1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,8 +24,6 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D9D9D9"
-        android:textColor="@color/black"
         android:text="Room 2"
         android:onClick="room2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,8 +37,6 @@
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D9D9D9"
-        android:textColor="@color/black"
         android:text="Room 3"
         android:onClick="room3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,8 +50,6 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D9D9D9"
-        android:textColor="@color/black"
         android:text="Room 4"
         android:onClick="room4"
         app:layout_constraintBottom_toBottomOf="parent"
