@@ -21,6 +21,10 @@ public class BreakoutRoom extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
     int roomNum = 0;
+    int room1users = 0;
+    int room2users = 0;
+    int room3users = 0;
+    int room4users = 0;
     List<String> playerList =  Arrays.asList("Beal","Booker", "Murray");
     List<String> draftList;
     @Override
