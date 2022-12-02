@@ -31,22 +31,24 @@ public class FirstRound extends AppCompatActivity {
     private String Irving = "202681";
     private String Garland = "1629636";
     private String Morant = "1629630";
-    private String Young = "1629607";
+    private String Young = "1629027";
     private String Doncic = "1629029";
     private String Curry = "201939";
     private String Paul = "101108";
     private String Giannis = "203507";
     private String Green = "1630224";
-    private String Thompson = "202961";
+    private String Thompson = "202691";
     private String Beal = "203078";
     private String Lavine = "203897";
     private String Edwards = "1630162";
     private String Brown = "1627759";
+    private String Mitchell = "1628378";
+    private String Booker = "1626164";
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
-    List<String> playerList =  Arrays.asList(Ball, Lillard, Irving, Garland, Morant,
-    Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
+    List<String> playerList =  Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
+    Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
     List<String> draftList;
     int roomNum;
     int turnNum;
@@ -130,7 +132,6 @@ public class FirstRound extends AppCompatActivity {
         Integer[] sixtNums = new Integer[16];
         List<Integer> sixtNumsList = asList(sixtNums);
         List<String> imageLinks = new ArrayList<String>();
-        Collections.shuffle(imageLinks);
         List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland, Morant, Young, Doncic,
                 Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
 
@@ -148,11 +149,11 @@ public class FirstRound extends AppCompatActivity {
 
         }
 //        List<ImageView> newImgLinks = Collections.singletonList((ImageView) imageLinks);
+        Collections.shuffle(imageLinks);
 
 
 
-
-        for(int i = 0; i <= imageLinks.size(); i++) {
+        for(int i = 0; i < imageLinks.size(); i++) {
                 Picasso.get().load(imageLinks.get(1)).into(image1);
                 Picasso.get().load(imageLinks.get(2)).into(image2);
                 Picasso.get().load(imageLinks.get(3)).into(image3);
