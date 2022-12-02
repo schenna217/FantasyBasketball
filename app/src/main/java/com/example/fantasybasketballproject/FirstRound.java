@@ -6,9 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,7 +46,7 @@ public class FirstRound extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
     List<String> playerList =  Arrays.asList(Ball, Lillard, Irving, Garland, Morant,
-    Young, Doncic, Curry, Paul, Giannis);
+    Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
     List<String> draftList;
     int roomNum;
     int turnNum;
@@ -55,8 +54,8 @@ public class FirstRound extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
-
         arrangePlayers();
+
 
         draftList = new ArrayList<>();
         Bundle extras = getIntent().getExtras();
@@ -86,9 +85,9 @@ public class FirstRound extends AppCompatActivity {
 //        if (view.getId() == R.id.b1)
 //        {
 //            buttonNum = 0;
-//            }
+//           }
 //        if (view.getId() == R.id.b2)
-//        {
+//       {
 //
 //        }
         if (!playerList.get(buttonNum).equals("Picked")) {
@@ -109,26 +108,24 @@ public class FirstRound extends AppCompatActivity {
 
     }
     public void arrangePlayers(){
-//        for(int i = 0; i < 15; i++) {
-//            String imageId = "R.id.imageView";
-//            int castId = Integer.parseInt(imageId);
 
-        ImageView image = (ImageView) findViewById(R.id.imageView);
-        ImageView image1 = (ImageView)findViewById(R.id.imageView1);
-        ImageView image2 = (ImageView)findViewById(R.id.imageView2);
-        ImageView image3 = (ImageView)findViewById(R.id.imageView3);
-        ImageView image4 = (ImageView)findViewById(R.id.imageView4);
-        ImageView image5 = (ImageView)findViewById(R.id.imageView5);
-        ImageView image6 = (ImageView)findViewById(R.id.imageView6);
-        ImageView image7 = (ImageView)findViewById(R.id.imageView7);
-        ImageView image8 = (ImageView)findViewById(R.id.imageView8);
-        ImageView image9 = (ImageView)findViewById(R.id.imageView9);
-        ImageView image10 = (ImageView)findViewById(R.id.imageView10);
-        ImageView image11 = (ImageView)findViewById(R.id.imageView11);
-        ImageView image12 = (ImageView)findViewById(R.id.imageView12);
-        ImageView image13 = (ImageView)findViewById(R.id.imageView13);
-        ImageView image14 = (ImageView)findViewById(R.id.imageView14);
-        ImageView image15 = (ImageView)findViewById(R.id.imageView15);
+
+        ImageView image1 = findViewById(R.id.imageView1);
+        ImageView image2 = findViewById(R.id.imageView2);
+        ImageView image3 = findViewById(R.id.imageView3);
+        ImageView image4 = findViewById(R.id.imageView4);
+        ImageView image5 = findViewById(R.id.imageView5);
+        ImageView image6 = findViewById(R.id.imageView6);
+        ImageView image7 = findViewById(R.id.imageView7);
+        ImageView image8 = findViewById(R.id.imageView8);
+        ImageView image9 = findViewById(R.id.imageView9);
+        ImageView image10 = findViewById(R.id.imageView10);
+        ImageView image11 = findViewById(R.id.imageView11);
+        ImageView image12 = findViewById(R.id.imageView12);
+        ImageView image13 = findViewById(R.id.imageView13);
+        ImageView image14 = findViewById(R.id.imageView14);
+        ImageView image15 = findViewById(R.id.imageView15);
+        ImageView image16 = findViewById(R.id.imageView16);
 
         Integer[] sixtNums = new Integer[16];
         List<Integer> sixtNumsList = asList(sixtNums);
@@ -150,29 +147,31 @@ public class FirstRound extends AppCompatActivity {
 
 
         }
-        List<ImageView> newImgLinks = Collections.singletonList((ImageView) imageLinks);
+//        List<ImageView> newImgLinks = Collections.singletonList((ImageView) imageLinks);
 
 
 
 
-        for(int i = 0; i < newImgLinks.size(); i++) {
-                Picasso.get().load(imageLinks.get(i)).into(image);
-                Picasso.get().load(imageLinks.get(i+1)).into(image1);
-                Picasso.get().load(i+2).into(image2);
-                Picasso.get().load(i+3).into(image3);
-                Picasso.get().load(i+4).into(image4);
-                Picasso.get().load(i+5).into(image5);
-                Picasso.get().load(i+6).into(image6);
-                Picasso.get().load(i+7).into(image7);
-                Picasso.get().load(i+8).into(image8);
-                Picasso.get().load(i+9).into(image9);
-                Picasso.get().load(i+10).into(image10);
-                Picasso.get().load(i+11).into(image11);
-                Picasso.get().load(i+12).into(image12);
-                Picasso.get().load(i+13).into(image13);
-                Picasso.get().load(i+14).into(image14);
-                Picasso.get().load(i+15).into(image15);
+        for(int i = 0; i <= imageLinks.size(); i++) {
+                Picasso.get().load(imageLinks.get(1)).into(image1);
+                Picasso.get().load(imageLinks.get(2)).into(image2);
+                Picasso.get().load(imageLinks.get(3)).into(image3);
+                Picasso.get().load(imageLinks.get(4)).into(image4);
+                Picasso.get().load(imageLinks.get(5)).into(image5);
+                Picasso.get().load(imageLinks.get(6)).into(image6);
+                Picasso.get().load(imageLinks.get(7)).into(image7);
+                Picasso.get().load(imageLinks.get(8)).into(image8);
+                Picasso.get().load(imageLinks.get(9)).into(image9);
+                Picasso.get().load(imageLinks.get(10)).into(image10);
+                Picasso.get().load(imageLinks.get(11)).into(image11);
+                Picasso.get().load(imageLinks.get(12)).into(image12);
+                Picasso.get().load(imageLinks.get(13)).into(image13);
+                Picasso.get().load(imageLinks.get(14)).into(image14);
+                Picasso.get().load(imageLinks.get(15)).into(image15);
+//                Picasso.get().load(imageLinks.get(16)).into(image16);
+
             }
+
     }
 
 
