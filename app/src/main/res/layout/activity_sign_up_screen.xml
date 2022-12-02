@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="#008F6D"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/Theme.FantasyBasketballProject">
 
 
     <TextView
@@ -15,7 +15,6 @@
         android:layout_gravity="center"
         android:fontFamily="@font/bm_hanna"
         android:text="Sign up for"
-        android:textColor="@color/white"
         android:textSize="32dp"
         android:translationY="90dp" />
 
@@ -26,7 +25,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/esp_ital"
         android:text="FANTASYMess!"
-        android:textColor="@color/white"
+        android:textColor="@color/orangeRed"
         android:textSize="36dp"
         android:textStyle="bold"
         android:translationY="90dp" />
@@ -36,12 +35,10 @@
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="#316353"
         android:fontFamily="@font/bm_hanna"
         android:hint="EMAIL ADDRESS"
         android:paddingLeft="10dp"
         android:textColor="@color/white"
-        android:textColorHint="#FFFFFF"
         android:textSize="24dp"
         android:textStyle="bold"
         android:translationY="130dp" />
@@ -51,12 +48,9 @@
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="#316353"
         android:fontFamily="@font/bm_hanna"
         android:hint="USERNAME"
         android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="#FFFFFF"
         android:textSize="24dp"
         android:textStyle="bold"
         android:translationY="170dp" />
@@ -66,12 +60,9 @@
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="#316353"
         android:fontFamily="@font/bm_hanna"
         android:hint="PASSWORD"
         android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="#FFFFFF"
         android:textSize="24dp"
         android:textStyle="bold"
         android:translationY="210dp" />
@@ -85,7 +76,7 @@
         android:fontFamily="@font/esp_ital"
         android:onClick="signUpClicked"
         android:text="Sign Up"
-        android:textColor="@color/black"
+        android:background="@color/orangeRed"
         android:textSize="20dp"
         android:textStyle="bold"
         android:translationY="250dp" />

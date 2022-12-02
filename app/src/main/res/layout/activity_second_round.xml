@@ -6,11 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".FirstRound"
     android:orientation="vertical"
-    android:background="@color/babyPowder">
-
-
-
-
+    android:theme="@style/Theme.FantasyBasketballProject">
 
     <GridView
         android:id="@+id/idGVcourses"
