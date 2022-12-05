@@ -13,6 +13,8 @@ public class Player implements Parcelable {
     private String name;
     private String position;
     private String docID;
+    private String imageViewID;
+    private String imageID;
     private String Ball = "1630163";
     private String Lillard = "203081";
     private String Irving = "202681";
@@ -34,6 +36,8 @@ public class Player implements Parcelable {
 
     List<String> playerList =  Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
             Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
+
+
 
     public Player(int rating, String name, String position, String docID) {
         this.rating = rating;
