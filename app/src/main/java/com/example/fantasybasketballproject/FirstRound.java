@@ -66,7 +66,7 @@ public class FirstRound extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
         arrangePlayers();
-        gridView = findViewById(R.id.gridLayout)
+        gridView = findViewById(R.id.gridLayout);
 
 
         draftList = new ArrayList<>();

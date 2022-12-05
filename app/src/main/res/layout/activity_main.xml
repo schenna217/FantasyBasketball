@@ -11,36 +11,37 @@
     android:paddingRight="5dp"
     android:paddingLeft="5dp"
 
-    android:columnCount="10"
-    android:rowCount="10"
     >
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="213dp"
-        android:layout_height="232dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        android:layout_gravity="bottom"
-        android:layout_column="0"
-        android:layout_row="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="213dp"
-        android:layout_height="232dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
+    <TextView
+        android:layout_width="158dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="44dp"
+        android:background="#0000FF"
+        android:gravity="center"
+        android:text="Team 1"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/button37"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="158dp"
+        android:layout_height="80dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="44dp"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="Team 2"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/button38"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </GridLayout>
