@@ -38,7 +38,7 @@ public class SignInScreen extends AppCompatActivity {
 
         firebaseHelper = new FirebaseHelper();
 
-        usernameET = findViewById(R.id.username);
+//        usernameET = findViewById(R.id.username);
         passwordET = findViewById(R.id.password);
 
         login = findViewById(R.id.login);

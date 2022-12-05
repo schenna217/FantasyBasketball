@@ -153,7 +153,7 @@ public class FirstRound extends AppCompatActivity {
 
 
 
-        for(int i = 0; i <= imageLinks.size(); i++) {
+        for(int i = 0; i < imageLinks.size(); i++) {
                 Picasso.get().load(imageLinks.get(1)).into(image1);
                 Picasso.get().load(imageLinks.get(2)).into(image2);
                 Picasso.get().load(imageLinks.get(3)).into(image3);
@@ -169,7 +169,7 @@ public class FirstRound extends AppCompatActivity {
                 Picasso.get().load(imageLinks.get(13)).into(image13);
                 Picasso.get().load(imageLinks.get(14)).into(image14);
                 Picasso.get().load(imageLinks.get(15)).into(image15);
-                //Picasso.get().load(imageLinks.get(16)).into(image16);
+//                Picasso.get().load(imageLinks.get(16)).into(image16);
 
             }
 
