@@ -8,7 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,8 +49,13 @@ public class FirstRound extends AppCompatActivity {
     private String Mitchell = "1628378";
     private String Booker = "1626164";
 
+    GridView gridView;
+
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference playerName;
+    DatabaseReference playersRef;
+
     List<String> playerList =  Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
     Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
     List<String> draftList;
@@ -57,6 +66,7 @@ public class FirstRound extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
         arrangePlayers();
+        gridView = findViewById(R.id.gridLayout)
 
 
         draftList = new ArrayList<>();
@@ -66,13 +76,23 @@ public class FirstRound extends AppCompatActivity {
             //The key argument here must match that used in the other activity
             roomNum = Integer.parseInt(value);
         }
+
+
     }
-    public void updateTurn(View view)
+    public void updateTurn()
     {
         myRef.child("room " + roomNum).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
+                //show list of rooms
+                playerList.clear();
+                Iterable<DataSnapshot> players = snapshot.getChildren();
+                for(DataSnapshot snapshot1 : players){
+                    playerList.add(snapshot1.getKey());
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(FirstRound.this,
+                            android.R.layout.simple_list_item_1, playerList);
+                    listView.setAdapter(adapter);
+                }
             }
 
             @Override
