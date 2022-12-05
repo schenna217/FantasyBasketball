@@ -32,6 +32,9 @@
             android:name=".ReservePlayers"
             android:exported="false" />
         <activity
+            android:name=".PlayerStatsClass"
+            android:exported="false" />
+        <activity
             android:name=".SignUpScreen"
             android:exported="false" />
         <activity

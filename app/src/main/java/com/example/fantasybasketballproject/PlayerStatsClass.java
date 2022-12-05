@@ -1,4 +1,6 @@
 package com.example.fantasybasketballproject;
 
-public class PlayerStatsClass {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PlayerStatsClass extends AppCompatActivity {
 }
