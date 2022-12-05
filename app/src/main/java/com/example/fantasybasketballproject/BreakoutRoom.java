@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +20,9 @@ import java.util.List;
 
 public class BreakoutRoom extends AppCompatActivity {
 
+    GridView gridLayout;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference roomRef;
     int roomNum = 0;
     int room1users = 0;
     int room2users = 0;
@@ -37,8 +40,15 @@ public class BreakoutRoom extends AppCompatActivity {
 
     public void joinRoom(View view)
     {
-        myRef.child("Room" + roomNum).child("User List").push().setValue("Hello");
-        Intent i = new Intent(BreakoutRoom.this, FirstRound.class);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //join an existing room and add yourself as player2
+                roomRef = database.getReference("rooms/" + roomName + "/player2");
+                updateTurn();
+                roomRef.setValue(playerName);
+            }
+        });        Intent i = new Intent(BreakoutRoom.this, FirstRound.class);
         i.putExtra("key",roomNum);
         startActivity(i);
     }
