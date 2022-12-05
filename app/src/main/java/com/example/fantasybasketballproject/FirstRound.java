@@ -153,8 +153,10 @@ public class FirstRound extends AppCompatActivity {
 
 
 
-        for(int i = 0; i < imageLinks.size(); i++) {
+       // for(int i = 0; i < imageLinks.size(); i++) {
                 Picasso.get().load(imageLinks.get(1)).into(image1);
+                // set another attribute of Player class to save the
+        // imageView id from first_round.xml (image1, image2, etc.)
                 Picasso.get().load(imageLinks.get(2)).into(image2);
                 Picasso.get().load(imageLinks.get(3)).into(image3);
                 Picasso.get().load(imageLinks.get(4)).into(image4);
@@ -171,7 +173,7 @@ public class FirstRound extends AppCompatActivity {
                 Picasso.get().load(imageLinks.get(15)).into(image15);
 //                Picasso.get().load(imageLinks.get(16)).into(image16);
 
-            }
+           // }
 
     }
 
