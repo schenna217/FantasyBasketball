@@ -179,65 +179,66 @@ public class FirebaseHelper {
     public void editData(Player m) {
         // edit Player m to the database
         // this method is overloaded and incorporates the interface to handle the asynch calls
-        editData(m, new FirestoreCallback() {
-            @Override
-            public void onCallback(ArrayList<Player> myList) {
-                Log.i(TAG, "Inside editData, onCallback " + myList.toString());
-            }
-        });
-    }
+//        editData(m, new FirestoreCallback() {
+//            @Override
+//            public void onCallback(ArrayList<Player> myList) {
+//                Log.i(TAG, "Inside editData, onCallback " + myList.toString());
+//            }
+//        });
+//    }
 
-    private void editData(Player m, FirestoreCallback firestoreCallback) {
-        String docId = m.getDocID();
-        db.collection("users").document(uid).collection("myPlayerList")
-                .document(docId)
-                .set(m)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Log.i(TAG, "Success updating document");
-                        readData(firestoreCallback);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i(TAG, "Error updating document", e);
-                    }
-                });
-    }
-
-    public void deleteData(Player m) {
-        // delete item w from database
-        // this method is overloaded and incorporates the interface to handle the asynch calls
-        deleteData(m, new FirestoreCallback() {
-            @Override
-            public void onCallback(ArrayList<Player> myList) {
-                Log.i(TAG, "Inside deleteData, onCallBack" + myList.toString());
-            }
-        });
-
-    }
-
-    private void deleteData(Player m, FirestoreCallback firestoreCallback) {
-        // delete item w from database
-        String docId = m.getDocID();
-        db.collection("users").document(uid).collection("myPlayerList")
-                .document(docId)
-                .delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Log.i(TAG, m.getName() + " successfully deleted");
-                        readData(firestoreCallback);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i(TAG, "Error deleting document", e);
-                    }
-                });
-    }
+//    private void editData(Player m, FirestoreCallback firestoreCallback) {
+//        String docId = m.getDocID();
+//        db.collection("users").document(uid).collection("myPlayerList")
+//                .document(docId)
+//                .set(m)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Log.i(TAG, "Success updating document");
+//                        readData(firestoreCallback);
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.i(TAG, "Error updating document", e);
+//                    }
+//                });
+//    }
+//
+//    public void deleteData(Player m) {
+//        // delete item w from database
+//        // this method is overloaded and incorporates the interface to handle the asynch calls
+//        deleteData(m, new FirestoreCallback() {
+//            @Override
+//            public void onCallback(ArrayList<Player> myList) {
+//                Log.i(TAG, "Inside deleteData, onCallBack" + myList.toString());
+//            }
+//        });
+//
+//    }
+//
+//    private void deleteData(Player m, FirestoreCallback firestoreCallback) {
+//        // delete item w from database
+//        String docId = m.getDocID();
+//        db.collection("users").document(uid).collection("myPlayerList")
+//                .document(docId)
+//                .delete()
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Log.i(TAG, m.getName() + " successfully deleted");
+//                        readData(firestoreCallback);
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.i(TAG, "Error deleting document", e);
+//                    }
+//                });
+//    }
 
 }
+    }
