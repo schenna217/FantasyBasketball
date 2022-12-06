@@ -33,35 +33,41 @@ import java.util.Collections;
 import java.util.List;
 
 public class FirstRound extends AppCompatActivity {
-    private String Ball = "1630163";
-    private String Lillard = "203081";
-    private String Irving = "202681";
-    private String Garland = "1629636";
-    private String Morant = "1629630";
-    private String Young = "1629027";
-    private String Doncic = "1629029";
-    private String Curry = "201939";
-    private String Paul = "101108";
-    private String Giannis = "203507";
-    private String Green = "1630224";
-    private String Thompson = "202691";
-    private String Beal = "203078";
-    private String Lavine = "203897";
-    private String Edwards = "1630162";
-    private String Brown = "1627759";
-    private String Mitchell = "1628378";
-    private String Booker = "1626164";
+    
+    ArrayList<String> playerssList = new ArrayList<String>(); // Create Playerlist
+    playerssList.add(Ball);
+    // add data below
+    playerssList
+    Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", imageLinks.get(0));
+    Player Lillard = new Player(95, "Damian Lillard", "point guard", "203081");
+    Player Irving = new Player(90, "Kyrie Irving", "point guard", "202681");
+    Player Garland = new Player(85, "Darius Garland", "point guard", "1629636");
+    Player Morant = new Player(85, "Ja Morant", "point guard", "1630163");
+    Player Young = new Player(90, "Trae Young", "point guard", "1629027");
+    Player Doncic = new Player(95, "Luka Doncic", "point guard", "1629029");
+    Player Curry = new Player(90, "Steph Curry", "point guard", "201939");
+    Player Paul = new Player(85, "Chris Paul", "point guard", "101108");
+    Player Thompson = new Player(85, "Jalen Green", "shooting guard", "202691");
+    Player Green = new Player(85, "Jalen Green", "shooting guard", "1630224");
+    Player Akoumpo = new Player(95, "Giannis Antetokounmpo", "power forward", "203507");
+    Player Beal = new Player(90, "Bradley Beal", "shooting guard", "203078");
+    Player Lavine = new Player(90, "Zach Lavine", "shooting guard", "203897");
+    Player Edwards = new Player(85, "Anthony Edwards", "shooting guard", "1630162");
+    Player Brown = new Player(90, "Jaylen Brown", "shooting guard", "1627759");
+    Player Mitchell = new Player(90, "Donovan Mitchell", "shooting guard", "1628378");
+    Player Booker = new Player(90, "Devin Booker", "shooting guard", "1626164");
+    // get method
 
     ImageButton imageButton;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference playerName;
     DatabaseReference playersRef;
 
+    List<String> imageLinks = new ArrayList<String>(18);
     List<String> playerList = Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
             Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
     List<String> draftList;
     int roomNum;
-<<<<<<< Updated upstream
     int turnNum;
 
     ImageView imageView1;
@@ -80,8 +86,7 @@ public class FirstRound extends AppCompatActivity {
     ImageView imageView14;
     ImageView imageView15;
     ImageView imageView16;
-=======
->>>>>>> Stashed changes
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +96,9 @@ public class FirstRound extends AppCompatActivity {
         draftList = new ArrayList<>();
 
 
+    }
+    public ArrayList<Player> getPlayerArrayList() {
+        return playerssList;
     }
 
     public void onClick(View v) {
@@ -109,14 +117,13 @@ public class FirstRound extends AppCompatActivity {
     }
         public void arrangePlayers() {
 
+    public
 
-<<<<<<< Updated upstream
-        Integer[] sixtNums = new Integer[16];
-        List<Integer> sixtNumsList = asList(sixtNums);
-        List<String> imageLinks = new ArrayList<String>(18);
+
+
         List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland, Morant, Young, Doncic,
                 Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
-=======
+
             ImageView image1 = findViewById(R.id.imageView1);
             ImageView image2 = findViewById(R.id.imageView2);
             ImageView image3 = findViewById(R.id.imageView3);
@@ -133,79 +140,60 @@ public class FirstRound extends AppCompatActivity {
             ImageView image14 = findViewById(R.id.imageView14);
             ImageView image15 = findViewById(R.id.imageView15);
             ImageView image16 = findViewById(R.id.imageView16);
->>>>>>> Stashed changes
-
-            Integer[] sixtNums = new Integer[16];
-            List<Integer> sixtNumsList = asList(sixtNums);
-            List<String> imageLinks = new ArrayList<String>();
-            List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland, Morant, Young, Doncic,
-                    Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
 
 
-            for (String i : playerList) {
-                String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
-                String P2 = ".png";
 
-                String createdLink = P1 + i + ".png";
+           createLinks();
 
-
-<<<<<<< Updated upstream
-            imageLinks.add(createdLink);
-        }
-=======
-                imageLinks.add(createdLink);
-
-
-            }
->>>>>>> Stashed changes
-//        List<ImageView> newImgLinks = Collections.singletonList((ImageView) imageLinks);
             //Collections.shuffle(imageLinks);
 
-<<<<<<< Updated upstream
-        Log.i("KOVOUR", imageLinks.toString());
 
-        Picasso.get().load(imageLinks.get(1)).into(image1);
-        Picasso.get().load(imageLinks.get(2)).into(image2);
-        Picasso.get().load(imageLinks.get(3)).into(image3);
-        Picasso.get().load(imageLinks.get(4)).into(image4);
-        Picasso.get().load(imageLinks.get(5)).into(image5);
-        Picasso.get().load(imageLinks.get(6)).into(image6);
-        Picasso.get().load(imageLinks.get(7)).into(image7);
-        Picasso.get().load(imageLinks.get(8)).into(image8);
-        Picasso.get().load(imageLinks.get(9)).into(image9);
-        Picasso.get().load(imageLinks.get(10)).into(image10);
-        Picasso.get().load(imageLinks.get(11)).into(image11);
-        Picasso.get().load(imageLinks.get(12)).into(image12);
-        Picasso.get().load(imageLinks.get(13)).into(image13);
-        Picasso.get().load(imageLinks.get(14)).into(image14);
-        Log.i("KOVOUR", "loaded14");
-        Picasso.get().load(imageLinks.get(15)).into(image15);
-        Log.i("KOVOUR", "loaded15");
-        Picasso.get().load(imageLinks.get(16)).into(image16);
-=======
+            Log.i("KOVOUR", imageLinks.toString());
 
-            for (int i = 0; i < imageLinks.size(); i++) {
-                Picasso.get().load(imageLinks.get(1)).into(image1);
-                Picasso.get().load(imageLinks.get(2)).into(image2);
-                Picasso.get().load(imageLinks.get(3)).into(image3);
-                Picasso.get().load(imageLinks.get(4)).into(image4);
-                Picasso.get().load(imageLinks.get(5)).into(image5);
-                Picasso.get().load(imageLinks.get(6)).into(image6);
-                Picasso.get().load(imageLinks.get(7)).into(image7);
-                Picasso.get().load(imageLinks.get(8)).into(image8);
-                Picasso.get().load(imageLinks.get(9)).into(image9);
-                Picasso.get().load(imageLinks.get(10)).into(image10);
-                Picasso.get().load(imageLinks.get(11)).into(image11);
-                Picasso.get().load(imageLinks.get(12)).into(image12);
-                Picasso.get().load(imageLinks.get(13)).into(image13);
-                Picasso.get().load(imageLinks.get(14)).into(image14);
-                Picasso.get().load(imageLinks.get(15)).into(image15);
-//                Picasso.get().load(imageLinks.get(16)).into(image16);
+            Picasso.get().load(imageLinks.get(1)).into(image1);
+            Picasso.get().load(imageLinks.get(2)).into(image2);
+            Picasso.get().load(imageLinks.get(3)).into(image3);
+            Picasso.get().load(imageLinks.get(4)).into(image4);
+            Picasso.get().load(imageLinks.get(5)).into(image5);
+            Picasso.get().load(imageLinks.get(6)).into(image6);
+            Picasso.get().load(imageLinks.get(7)).into(image7);
+            Picasso.get().load(imageLinks.get(8)).into(image8);
+            Picasso.get().load(imageLinks.get(9)).into(image9);
+            Picasso.get().load(imageLinks.get(10)).into(image10);
+            Picasso.get().load(imageLinks.get(11)).into(image11);
+            Picasso.get().load(imageLinks.get(12)).into(image12);
+            Picasso.get().load(imageLinks.get(13)).into(image13);
+            Picasso.get().load(imageLinks.get(14)).into(image14);
+            Log.i("KOVOUR", "loaded14");
+            Picasso.get().load(imageLinks.get(15)).into(image15);
+            Log.i("KOVOUR", "loaded15");
+            Picasso.get().load(imageLinks.get(16)).into(image16);
 
             }
->>>>>>> Stashed changes
+            public void createLinks(){
+                for (String i : playerList) {
+                    String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
+                    String P2 = ".png";
 
-        }
+                    String createdLink = P1 + i + ".png";
+
+                    imageLinks.add(createdLink);
+            }
+
+
 
 
     }
+
+
+
+
+
+
+            }
+
+
+
+
+
+
