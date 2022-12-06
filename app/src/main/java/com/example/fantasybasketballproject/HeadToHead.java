@@ -11,7 +11,7 @@ public class HeadToHead extends AppCompatActivity {
     private Random tipOff, playerScores, playerSteals, playerShoots;
     //If true, Team 1 has possession, else Team 2 has possession
     private boolean teamOnePossession;
-    private int totalPoints, totalAssists, totalRebounds;
+    private int totalPointsTeamOne, totalPointsTeamTwo, totalAssists, totalRebounds;
     private double playerPasses, playerRebounds;
 
 
@@ -25,10 +25,20 @@ public class HeadToHead extends AppCompatActivity {
     public String generatedOutcome () {
         teamOnePossession = tipOff.nextBoolean();
 
-        if(teamOnePossession) {
+        while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
+            if(teamOnePossession) {
+
+                
+
+            }
+            return "done";
+
+            if(!teamOnePossession) {
+
+            }
         }
-        return "done";
+
     }
 
     public boolean getTeamOnePossession() {
@@ -71,12 +81,12 @@ public class HeadToHead extends AppCompatActivity {
         this.playerShoots = playerShoots;
     }
 
-    public int getTotalPoints() {
-        return totalPoints;
+    public int getTotalPointsTeamOne() {
+        return totalPointsTeamOne;
     }
 
-    public void setTotalPoints(int totalPoints) {
-        this.totalPoints = totalPoints;
+    public void setTotalPointsTeamOne(int totalPointsTeamOne) {
+        this.totalPointsTeamOne = totalPointsTeamOne;
     }
 
     public int getTotalAssists() {
@@ -109,5 +119,17 @@ public class HeadToHead extends AppCompatActivity {
 
     public void setPlayerRebounds(double playerRebounds) {
         this.playerRebounds = playerRebounds;
+    }
+
+    public boolean isTeamOnePossession() {
+        return teamOnePossession;
+    }
+
+    public int getTotalPointsTeamTwo() {
+        return totalPointsTeamTwo;
+    }
+
+    public void setTotalPointsTeamTwo(int totalPointsTeamTwo) {
+        this.totalPointsTeamTwo = totalPointsTeamTwo;
     }
 }
