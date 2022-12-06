@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,53 +13,43 @@ public class Player implements Parcelable {
     private int rating;
     private String name;
     private String position;
-    private String docID;
     private String imageViewID;
     private String imageID;
-    private String Ball = "1630163";
-    private String Lillard = "203081";
-    private String Irving = "202681";
-    private String Garland = "1629636";
-    private String Morant = "1629630";
-    private String Young = "1629027";
-    private String Doncic = "1629029";
-    private String Curry = "201939";
-    private String Paul = "101108";
+    private String Lamelo = "1630163";
+    private String Damian = "203081";
+    private String Kyrie = "202681";
+    private String Darius = "1629636";
+    private String Ja = "1629630";
+    private String Trae = "1629027";
+    private String Luka = "1629029";
+    private String Steph = "201939";
+    private String Chris = "101108";
     private String Giannis = "203507";
-    private String Green = "1630224";
-    private String Thompson = "202691";
-    private String Beal = "203078";
-    private String Lavine = "203897";
-    private String Edwards = "1630162";
-    private String Brown = "1627759";
-    private String Mitchell = "1628378";
-    private String Booker = "1626164";
+    private String Jalen = "1630224";
+    private String Klay = "202691";
+    private String Bradley = "203078";
+    private String Zach = "203897";
+    private String Anthony = "1630162";
+    private String Jaylen = "1627759";
+    private String Donovan = "1628378";
+    private String Devin = "1626164";
 
-    List<String> playerList =  Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
-            Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
+    private List<String> playerList =  Arrays.asList(Donovan, Lamelo, Damian, Kyrie, Darius, Ja, Steph, Trae, Luka
+    , Chris, Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Devin);
 
 
 
-    public Player(int rating, String name, String position, String docID) {
+
+    public Player(int rating, String name, String position, String imageID) {
         this.rating = rating;
         this.name = name;
         this.position = position;
-        this.docID = docID;
+        this.imageID = imageID;
+        this.imageViewID = "";
     }
 
-    public Player(int rating, String name, String position) {
-        this.rating = rating;
-        this.name = name;
-        this.position = position;
-        this.docID = "No docID yet.";
-    }
 
-    public Player() {
-        this.rating = 0;
-        this.name = "";
-        this.position = "";
-        this.docID = "";
-    }
+
 
     public String toString() {
         return this.name;
@@ -87,7 +78,7 @@ public class Player implements Parcelable {
         rating = parcel.readInt();
         name = parcel.readString();
         position = parcel.readString();
-        docID = parcel.readString();
+
     }
 
     @Override
@@ -95,7 +86,6 @@ public class Player implements Parcelable {
         dest.writeInt(rating);
         dest.writeString(name);
         dest.writeString(position);
-        dest.writeString(docID);
     }
 
 
@@ -136,6 +126,10 @@ public class Player implements Parcelable {
 
     public void setdocID(String docID) {
         this.docID = docID;
+    }
+
+    public List<String> getPlayerList{
+        return playerList;
     }
 
 }

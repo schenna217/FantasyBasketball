@@ -38,7 +38,14 @@ public class SecondRound extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_round);
 
-
+        Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163");
+        Player Lillard = new Player(92, "Damian Lillard", "point guard", "203081");
+        Player Kyrie = new Player(90, "Kyrie Irving", "point guard", "202681");
+        Player Garland = new Player(88, "Darius Garland", "point guard", "1629636");
+        Player Morant = new Player(90, "Ja Morant", "point guard", "1630163");
+        Player Young = new Player(90, "Trae Young", "point guard", "1630163");
+        Player Doncic = new Player(90, "Luka Doncic", "point guard", "1630163");
+        Player Curry = new Player(90, "Steph Curry", "point guard", "1630163");
 
 
 
