@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import android.widget.AdapterView;
@@ -61,6 +62,24 @@ public class FirstRound extends AppCompatActivity {
     List<String> draftList;
     int roomNum;
     int turnNum;
+
+    ImageView imageView1;
+    ImageView imageView2;
+    ImageView imageView3;
+    ImageView imageView4;
+    ImageView imageView5;
+    ImageView imageView6;
+    ImageView imageView7;
+    ImageView imageView8;
+    ImageView imageView9;
+    ImageView imageView10;
+    ImageView imageView11;
+    ImageView imageView12;
+    ImageView imageView13;
+    ImageView imageView14;
+    ImageView imageView15;
+    ImageView imageView16;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,7 +170,7 @@ public class FirstRound extends AppCompatActivity {
 
         Integer[] sixtNums = new Integer[16];
         List<Integer> sixtNumsList = asList(sixtNums);
-        List<String> imageLinks = new ArrayList<String>();
+        List<String> imageLinks = new ArrayList<String>(18);
         List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland, Morant, Young, Doncic,
                 Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
 
@@ -165,33 +184,31 @@ public class FirstRound extends AppCompatActivity {
 
 
             imageLinks.add(createdLink);
-
-
         }
 //        List<ImageView> newImgLinks = Collections.singletonList((ImageView) imageLinks);
         Collections.shuffle(imageLinks);
 
 
+        Log.i("KOVOUR", imageLinks.toString());
 
-        for(int i = 0; i < imageLinks.size(); i++) {
-                Picasso.get().load(imageLinks.get(1)).into(image1);
-                Picasso.get().load(imageLinks.get(2)).into(image2);
-                Picasso.get().load(imageLinks.get(3)).into(image3);
-                Picasso.get().load(imageLinks.get(4)).into(image4);
-                Picasso.get().load(imageLinks.get(5)).into(image5);
-                Picasso.get().load(imageLinks.get(6)).into(image6);
-                Picasso.get().load(imageLinks.get(7)).into(image7);
-                Picasso.get().load(imageLinks.get(8)).into(image8);
-                Picasso.get().load(imageLinks.get(9)).into(image9);
-                Picasso.get().load(imageLinks.get(10)).into(image10);
-                Picasso.get().load(imageLinks.get(11)).into(image11);
-                Picasso.get().load(imageLinks.get(12)).into(image12);
-                Picasso.get().load(imageLinks.get(13)).into(image13);
-                Picasso.get().load(imageLinks.get(14)).into(image14);
-                Picasso.get().load(imageLinks.get(15)).into(image15);
-//                Picasso.get().load(imageLinks.get(16)).into(image16);
-
-            }
+        Picasso.get().load(imageLinks.get(1)).into(image1);
+        Picasso.get().load(imageLinks.get(2)).into(image2);
+        Picasso.get().load(imageLinks.get(3)).into(image3);
+        Picasso.get().load(imageLinks.get(4)).into(image4);
+        Picasso.get().load(imageLinks.get(5)).into(image5);
+        Picasso.get().load(imageLinks.get(6)).into(image6);
+        Picasso.get().load(imageLinks.get(7)).into(image7);
+        Picasso.get().load(imageLinks.get(8)).into(image8);
+        Picasso.get().load(imageLinks.get(9)).into(image9);
+        Picasso.get().load(imageLinks.get(10)).into(image10);
+        Picasso.get().load(imageLinks.get(11)).into(image11);
+        Picasso.get().load(imageLinks.get(12)).into(image12);
+        Picasso.get().load(imageLinks.get(13)).into(image13);
+        Picasso.get().load(imageLinks.get(14)).into(image14);
+        Log.i("KOVOUR", "loaded14");
+        Picasso.get().load(imageLinks.get(15)).into(image15);
+        Log.i("KOVOUR", "loaded15");
+        Picasso.get().load(imageLinks.get(16)).into(image16);
 
     }
 
