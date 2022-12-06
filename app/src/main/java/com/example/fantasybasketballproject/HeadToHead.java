@@ -29,7 +29,7 @@ public class HeadToHead extends AppCompatActivity {
 
             if(teamOnePossession) {
 
-                
+
 
             }
             return "done";
