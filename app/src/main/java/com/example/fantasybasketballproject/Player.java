@@ -148,7 +148,7 @@ public class Player implements Parcelable {
         this.docID = docID;
     }
 
-    public List<String> getPlayerList{
+    public List<String> getPlayerList(){
         return playerList;
     }
 

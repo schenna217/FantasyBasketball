@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -20,9 +21,11 @@ import java.util.List;
 
 public class BreakoutRoom extends AppCompatActivity {
 
-    GridView gridLayout;
+    Button button;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference roomRef;
+    DatabaseReference playersRef;
+    String roomName ="";
     int roomNum = 0;
     int room1users = 0;
     int room2users = 0;
@@ -35,29 +38,12 @@ public class BreakoutRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breakout_room);
         draftList = new ArrayList<>();
+
     }
 
 
-    public void joinRoom(View view)
-    {
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //join an existing room and add yourself as player2
-                roomRef = database.getReference("rooms/" + roomName + "/player2");
-                updateTurn();
-                roomRef.setValue(playerName);
-            }
-        });        Intent i = new Intent(BreakoutRoom.this, FirstRound.class);
-        i.putExtra("key",roomNum);
-        startActivity(i);
-    }
-    public void createRoom(View view)
-    {
-        myRef.child("Room " + roomNum).child("Player List").setValue(playerList);
-        joinRoom(view);
-    }
-    public void room1(View view)
+
+    /*public void room1(View view)
     {
         roomNum = 1;
         createRoom(view);
@@ -85,5 +71,5 @@ public class BreakoutRoom extends AppCompatActivity {
         Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
         startActivity(intent);
     }
-
+    */
 }
