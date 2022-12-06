@@ -11,7 +11,9 @@ import android.view.View;
 
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -50,17 +52,16 @@ public class FirstRound extends AppCompatActivity {
     private String Mitchell = "1628378";
     private String Booker = "1626164";
 
-    GridView gridView;
-
-
+    ImageButton imageButton;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference playerName;
     DatabaseReference playersRef;
 
-    List<String> playerList =  Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
-    Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
+    List<String> playerList = Arrays.asList(Mitchell, Ball, Lillard, Irving, Garland, Morant,
+            Young, Doncic, Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown, Booker);
     List<String> draftList;
     int roomNum;
+<<<<<<< Updated upstream
     int turnNum;
 
     ImageView imageView1;
@@ -79,116 +80,88 @@ public class FirstRound extends AppCompatActivity {
     ImageView imageView14;
     ImageView imageView15;
     ImageView imageView16;
+=======
+>>>>>>> Stashed changes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
         arrangePlayers();
-        gridView = findViewById(R.id.gridLayout);
-
-
         draftList = new ArrayList<>();
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String value = extras.getString("key");
-            //The key argument here must match that used in the other activity
-            roomNum = Integer.parseInt(value);
+
+
+    }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.imageButton:
+                imageButton = findViewById(R.id.imageButton);
+                break;
+            case R.id.imageButton2:
+                imageButton = findViewById(R.id.imageButton2);
+                break;
+            case R.id.imageButton3:
+                imageButton = findViewById(R.id.imageButton3);
+                break;
         }
-
-
+        Log.d("Button Num", "button");
     }
-    public void updateTurn()
-    {
-        myRef.child("room " + roomNum).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //show list of rooms
-                playerList.clear();
-                Iterable<DataSnapshot> players = snapshot.getChildren();
-                for(DataSnapshot snapshot1 : players){
-                    playerList.add(snapshot1.getKey());
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(FirstRound.this,
-                            android.R.layout.simple_list_item_1, playerList);
-                    listView.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(FirstRound.this, "Fail to get data.",Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    public void draftFunction(View view) {
-        int buttonNum = 0;
-//        if (view.getId() == R.id.b1)
-//        {
-//            buttonNum = 0;
-//           }
-//        if (view.getId() == R.id.b2)
-//       {
-//
-//        }
-        if (!playerList.get(buttonNum).equals("Picked")) {
-            TextView player = (TextView) findViewById(R.id.textView);
-            draftList.add(playerList.get(roomNum));
-            System.out.println(draftList);
-            playerList.set(roomNum, "Picked");
-            System.out.println(playerList);
-            updateRoom(view);
-            } else {
-                Toast.makeText(getApplicationContext(), "That player Has already been picked", Toast.LENGTH_LONG).show();
-            }
-
-    }
-    public void updateRoom(View view)
-    {
-        myRef.child("Room " + roomNum).child("Player List").setValue(playerList);
-
-    }
-    public void arrangePlayers(){
+        public void arrangePlayers() {
 
 
-        ImageView image1 = findViewById(R.id.imageView1);
-        ImageView image2 = findViewById(R.id.imageView2);
-        ImageView image3 = findViewById(R.id.imageView3);
-        ImageView image4 = findViewById(R.id.imageView4);
-        ImageView image5 = findViewById(R.id.imageView5);
-        ImageView image6 = findViewById(R.id.imageView6);
-        ImageView image7 = findViewById(R.id.imageView7);
-        ImageView image8 = findViewById(R.id.imageView8);
-        ImageView image9 = findViewById(R.id.imageView9);
-        ImageView image10 = findViewById(R.id.imageView10);
-        ImageView image11 = findViewById(R.id.imageView11);
-        ImageView image12 = findViewById(R.id.imageView12);
-        ImageView image13 = findViewById(R.id.imageView13);
-        ImageView image14 = findViewById(R.id.imageView14);
-        ImageView image15 = findViewById(R.id.imageView15);
-        ImageView image16 = findViewById(R.id.imageView16);
-
+<<<<<<< Updated upstream
         Integer[] sixtNums = new Integer[16];
         List<Integer> sixtNumsList = asList(sixtNums);
         List<String> imageLinks = new ArrayList<String>(18);
         List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland, Morant, Young, Doncic,
                 Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
+=======
+            ImageView image1 = findViewById(R.id.imageView1);
+            ImageView image2 = findViewById(R.id.imageView2);
+            ImageView image3 = findViewById(R.id.imageView3);
+            ImageView image4 = findViewById(R.id.imageView4);
+            ImageView image5 = findViewById(R.id.imageView5);
+            ImageView image6 = findViewById(R.id.imageView6);
+            ImageView image7 = findViewById(R.id.imageView7);
+            ImageView image8 = findViewById(R.id.imageView8);
+            ImageView image9 = findViewById(R.id.imageView9);
+            ImageView image10 = findViewById(R.id.imageView10);
+            ImageView image11 = findViewById(R.id.imageView11);
+            ImageView image12 = findViewById(R.id.imageView12);
+            ImageView image13 = findViewById(R.id.imageView13);
+            ImageView image14 = findViewById(R.id.imageView14);
+            ImageView image15 = findViewById(R.id.imageView15);
+            ImageView image16 = findViewById(R.id.imageView16);
+>>>>>>> Stashed changes
+
+            Integer[] sixtNums = new Integer[16];
+            List<Integer> sixtNumsList = asList(sixtNums);
+            List<String> imageLinks = new ArrayList<String>();
+            List<String> playerList = Arrays.asList(Ball, Lillard, Irving, Garland, Morant, Young, Doncic,
+                    Curry, Paul, Giannis, Green, Thompson, Beal, Lavine, Edwards, Brown);
 
 
+            for (String i : playerList) {
+                String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
+                String P2 = ".png";
 
-        for(String i: playerList){
-            String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
-            String P2 = ".png";
-
-            String createdLink = P1 + i + ".png";
+                String createdLink = P1 + i + ".png";
 
 
+<<<<<<< Updated upstream
             imageLinks.add(createdLink);
         }
+=======
+                imageLinks.add(createdLink);
+
+
+            }
+>>>>>>> Stashed changes
 //        List<ImageView> newImgLinks = Collections.singletonList((ImageView) imageLinks);
-        Collections.shuffle(imageLinks);
+            //Collections.shuffle(imageLinks);
 
-
+<<<<<<< Updated upstream
         Log.i("KOVOUR", imageLinks.toString());
 
         Picasso.get().load(imageLinks.get(1)).into(image1);
@@ -209,11 +182,30 @@ public class FirstRound extends AppCompatActivity {
         Picasso.get().load(imageLinks.get(15)).into(image15);
         Log.i("KOVOUR", "loaded15");
         Picasso.get().load(imageLinks.get(16)).into(image16);
+=======
+
+            for (int i = 0; i < imageLinks.size(); i++) {
+                Picasso.get().load(imageLinks.get(1)).into(image1);
+                Picasso.get().load(imageLinks.get(2)).into(image2);
+                Picasso.get().load(imageLinks.get(3)).into(image3);
+                Picasso.get().load(imageLinks.get(4)).into(image4);
+                Picasso.get().load(imageLinks.get(5)).into(image5);
+                Picasso.get().load(imageLinks.get(6)).into(image6);
+                Picasso.get().load(imageLinks.get(7)).into(image7);
+                Picasso.get().load(imageLinks.get(8)).into(image8);
+                Picasso.get().load(imageLinks.get(9)).into(image9);
+                Picasso.get().load(imageLinks.get(10)).into(image10);
+                Picasso.get().load(imageLinks.get(11)).into(image11);
+                Picasso.get().load(imageLinks.get(12)).into(image12);
+                Picasso.get().load(imageLinks.get(13)).into(image13);
+                Picasso.get().load(imageLinks.get(14)).into(image14);
+                Picasso.get().load(imageLinks.get(15)).into(image15);
+//                Picasso.get().load(imageLinks.get(16)).into(image16);
+
+            }
+>>>>>>> Stashed changes
+
+        }
+
 
     }
-
-
-
-
-
-}
