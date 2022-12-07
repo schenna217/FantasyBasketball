@@ -36,18 +36,17 @@ public class BreakoutRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breakout_room);
         draftList = new ArrayList<>();
-
+        createRoom();
     }
     public void createRoom()
     {
         Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
         intent.putExtra("roomNum", roomNum);
         startActivity(intent);
-
     }
 
     public void setRoom(View v) {
-        /*switch (v.getId()) {
+        switch (v.getId()) {
             case R.id.button10:
                 roomNum = 4;
                 createRoom();
@@ -67,9 +66,9 @@ public class BreakoutRoom extends AppCompatActivity {
             default:
                 throw new RuntimeException("Unknow button ID");
 
-         */
-        roomNum = 1;
+
+
         }
     }
 
-//}
+}
