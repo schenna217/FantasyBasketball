@@ -172,7 +172,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/gameUpdates"
         android:layout_width="386dp"
         android:layout_height="210dp"
         android:ems="10"
