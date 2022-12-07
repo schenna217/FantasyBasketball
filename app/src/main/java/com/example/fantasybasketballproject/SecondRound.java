@@ -30,7 +30,7 @@ public class SecondRound extends AppCompatActivity {
     Player Middleton = new Player(90, "Khris Middleton", "small forward", "203114", "");
     Player Ingram = new Player(85, "Brandon Ingram", "small forward", "1627742", "");
     Player Bridges = new Player(85, "Mikal Bridges", "small forward", "1628969", "");
-    Player Wiggins = new Player(85, "Mikal Bridges", "small forward", "203952", "");
+    Player Wiggins = new Player(85, "Andrew Wiggins", "small forward", "203952", "");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +52,6 @@ public class SecondRound extends AppCompatActivity {
         playerList.add(Ingram);
         playerList.add(Bridges);
         playerList.add(Wiggins);
-
-
-
-
-
-
     }
 
 

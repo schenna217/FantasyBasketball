@@ -1,10 +1,12 @@
 package com.example.fantasybasketballproject;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.ImageView;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -22,6 +24,7 @@ public class Player implements Parcelable {
     private String position;
     private String imageViewID;
     private String imageID;
+    public @DrawableRes int imageDrawable;
 
     public String getImageLink() {
         return imageLink;
@@ -55,18 +58,7 @@ public class Player implements Parcelable {
     public List<String> distinctIDs = Arrays.asList(Lamelo, Damian, Kyrie, Darius, Ja, Trae, Luka, Steph, Chris
             , Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Donovan, Devin);
 
-
-
-
-
-
-
-
-
-
-
-
-
+    //For players
     public Player(int rating, String name, String position, String imageID, String imageLink) {
         this.rating = rating;
         this.name = name;
@@ -76,7 +68,13 @@ public class Player implements Parcelable {
         this.imageLink = "";
     }
 
-
+    //For randoms
+    public Player(int rating, String name, String position, @DrawableRes int imageDrawable){
+        this.rating = rating;
+        this.name = name;
+        this.position = position;
+        this.imageDrawable = imageDrawable;
+    }
 
 
     public String toString() {
@@ -116,9 +114,6 @@ public class Player implements Parcelable {
         dest.writeString(position);
     }
 
-
-
- 
 
     @Override
     public int describeContents() {
