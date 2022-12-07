@@ -5,9 +5,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Player implements Parcelable {
     private int rating;
@@ -35,39 +42,21 @@ public class Player implements Parcelable {
     private String Donovan = "1628378";
     private String Devin = "1626164";
 
-//    private ArrayList<String> playerList;
 
-//            =  Arrays.asList(Donovan, Lamelo, Damian, Kyrie, Darius, Ja, Steph, Trae, Luka
-//    , Chris, Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Devin);
-
-//    Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163");
-//    Player Lillard = new Player(95, "Damian Lillard", "point guard", "203081");
-//    Player Irving = new Player(90, "Kyrie Irving", "point guard", "202681");
-//    Player Garland = new Player(85, "Darius Garland", "point guard", "1629636");
-//    Player Morant = new Player(85, "Ja Morant", "point guard", "1630163");
-//    Player Young = new Player(90, "Trae Young", "point guard", "1629027");
-//    Player Doncic = new Player(95, "Luka Doncic", "point guard", "1629029");
-//    Player Curry = new Player(90, "Steph Curry", "point guard", "201939");
-//    Player Paul = new Player(85, "Chris Paul", "point guard", "101108");
-//    Player Thompson = new Player(85, "Jalen Green", "shooting guard", "202691");
-//    Player Green = new Player(85, "Jalen Green", "shooting guard", "1630224");
-//    Player Akoumpo = new Player(95, "Giannis Antetokounmpo", "power forward", "203507");
-//    Player Beal = new Player(90, "Bradley Beal", "shooting guard", "203078");
-//    Player Lavine = new Player(90, "Zach Lavine", "shooting guard", "203897");
-//    Player Edwards = new Player(85, "Anthony Edwards", "shooting guard", "1630162");
-//    Player Brown = new Player(90, "Jaylen Brown", "shooting guard", "1627759");
-//    Player Mitchell = new Player(90, "Donovan Mitchell", "shooting guard", "1628378");
-//    Player Booker = new Player(90, "Devin Booker", "shooting guard", "1626164");
+    public List<String> distinctIDs = Arrays.asList(Lamelo, Damian, Kyrie, Darius, Ja, Trae, Luka, Steph, Chris
+            , Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Donovan, Devin);
 
 
 
-    public Player(int rating, String name, String position, String imageID) {
-        this.rating = rating;
-        this.name = name;
-        this.position = position;
-        this.imageID = imageID;
-        this.imageViewID = "";
-    }
+
+
+
+
+
+
+
+
+
 
     public Player(int rating, String name, String position, String imageID, String imageLink) {
         this.rating = rating;
@@ -150,13 +139,10 @@ public class Player implements Parcelable {
     public void setposition(String position) {
         this.position = position;
     }
-
-
-
-
-    public List<String> getPlayerList(){
-        return playerList;
+    public List<String> getDistinctIDs() {
+        return distinctIDs;
     }
+
 
 }
 
