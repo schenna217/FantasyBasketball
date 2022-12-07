@@ -55,8 +55,12 @@ public abstract class FirstRound extends AppCompatActivity {
     // get method
 
     ImageButton imageButton;
+
+    // You want to use a static FirebaseHelper var in one activity and keep on calling THAT var, not make a new one
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference playerName;
+
+    // you are using firebase not firestore.  The code is different
+    DatabaseReference playerName;   // this is never instantiated.  This is why its crashing
     DatabaseReference playersRef;
 
     public ArrayList<Player> getPlayerList() {
