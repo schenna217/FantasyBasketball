@@ -98,6 +98,24 @@ public abstract class FirstRound extends AppCompatActivity {
         Player Mitchell = new Player(90, "Donovan Mitchell", "shooting guard", "1628378", imageLinks.get(16));
         Player Booker = new Player(95, "Devin Booker", "shooting guard", "1626164", imageLinks.get(17));
         arrangePlayers();
+        playerList.add(Ball);
+        playerList.add(Lillard);
+        playerList.add(Irving);
+        playerList.add(Garland);
+        playerList.add(Morant);
+        playerList.add(Young);
+        playerList.add(Doncic);
+        playerList.add(Curry);
+        playerList.add(Paul);
+        playerList.add(Thompson);
+        playerList.add(Green);
+        playerList.add(Akoumpo);
+        playerList.add(Beal);
+        playerList.add(Lavine);
+        playerList.add(Edwards);
+        playerList.add(Brown);
+        playerList.add(Mitchell);
+        playerList.add(Booker);
     }
 
 

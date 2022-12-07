@@ -43,7 +43,7 @@ public class BreakoutRoom extends AppCompatActivity {
 
 
 
-    /*public void room1(View view)
+    public void room1(View view)
     {
         roomNum = 1;
         createRoom(view);
@@ -71,5 +71,5 @@ public class BreakoutRoom extends AppCompatActivity {
         Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
         startActivity(intent);
     }
-    */
+
 }

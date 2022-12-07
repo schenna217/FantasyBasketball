@@ -46,7 +46,7 @@ public class HeadToHead extends AppCompatActivity {
             if(teamOnePossession) {
                 int randPlayer = Math.random()*draftNums.size()+1;
                 int randOffNum = (int) (Math.random()*offActions.size()+1);
-                int rand
+                int rand;
 
 
 
