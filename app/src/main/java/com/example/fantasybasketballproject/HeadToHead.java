@@ -41,7 +41,7 @@ public class HeadToHead extends AppCompatActivity {
 
         String test = "Miheer";
         // set value to the given TextView
-        gameUpdates.setText(generatedOutcome);
+//        gameUpdates.setText(generatedOutcome);
 
         // to perform the movement action
         // Moves the cursor or scrolls to the
@@ -58,23 +58,23 @@ public class HeadToHead extends AppCompatActivity {
 
         while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
-            if(teamOnePossession) {
-                int randOffPlayer = Math.random()*draftNumsTeamOne.size()+1;
-                int randOffAction = (int) (Math.random()*offActions.size()+1);
-                //play=  arrraylist(randint)
-                //act =  arraylistAction(rand2)
-                //play.act()
-
-                int randDefPlayer = Math.random()*draftNumsTeamTwo.size()+1;
-                int randDefAction = (int) (Math.random()*offActions.size()+1);
-                // str avtion
-
-                String str = "" +rosterList(randOffPlayer) + actionlIst(randOffAction);
-                // if(
-
-                return str;
-
-            }
+//            if(teamOnePossession) {
+//                int randOffPlayer = Math.random()*draftNumsTeamOne.size()+1;
+//                int randOffAction = (int) (Math.random()*offActions.size()+1);
+//                //play=  arrraylist(randint)
+//                //act =  arraylistAction(rand2)
+//                //play.act()
+//
+//                int randDefPlayer = Math.random()*draftNumsTeamTwo.size()+1;
+//                int randDefAction = (int) (Math.random()*offActions.size()+1);
+//                // str avtion
+//
+//                String str = "" +rosterList(randOffPlayer) + actionlIst(randOffAction);
+//                // if(
+//
+//                return str;
+//
+//            }
 
 
 //            if(!teamOnePossession) {

@@ -45,7 +45,8 @@ public class FirstRound extends AppCompatActivity {
             , Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Donovan, Devin);
 
     ArrayList<Player> playerList = new ArrayList<Player>();
-    List<String> imageLinks = new ArrayList<String>(18);
+    List<String> imageLinks = new ArrayList<String>();
+
 
     // add data below
 
@@ -71,8 +72,6 @@ public class FirstRound extends AppCompatActivity {
     List<String> draftList;
     int roomNum;
 
-    ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10;
-    ImageView imageView11, imageView12, imageView13, imageView14, imageView15, imageView16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +95,6 @@ public class FirstRound extends AppCompatActivity {
         Player Brown = new Player(90, "Jaylen Brown", "shooting guard", "1627759", imageLinks.get(13));
         Player Mitchell = new Player(90, "Donovan Mitchell", "shooting guard", "1628378", imageLinks.get(14));
         Player Booker = new Player(95, "Devin Booker", "shooting guard", "1626164", imageLinks.get(15));
-        arrangePlayers();
         playerList.add(Ball);
         playerList.add(Lillard);
         playerList.add(Irving);
@@ -113,13 +111,12 @@ public class FirstRound extends AppCompatActivity {
         playerList.add(Brown);
         playerList.add(Mitchell);
         playerList.add(Booker);
-
+        arrangePlayers();
         Intent myIntent = getIntent();
         roomNum = myIntent.getIntExtra("roomNum",0);
         playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
-
-
         //updateRoom();
+
     }
 
 
@@ -142,9 +139,8 @@ public class FirstRound extends AppCompatActivity {
         ImageView image15 = findViewById(R.id.imageView15);
         ImageView image16 = findViewById(R.id.imageView16);
 
-        //Collections.shuffle(playerList);
+        Collections.shuffle(playerList);
         Log.i("KOVOUR", imageLinks.toString());
-        for(Player i : playerList) {
             Picasso.get().load(playerList.get(0).getImageLink()).into(image1);
             Picasso.get().load(playerList.get(1).getImageLink()).into(image2);
             Picasso.get().load(playerList.get(2).getImageLink()).into(image3);
@@ -160,8 +156,8 @@ public class FirstRound extends AppCompatActivity {
             Picasso.get().load(playerList.get(12).getImageLink()).into(image13);
             Picasso.get().load(playerList.get(13).getImageLink()).into(image14);
             Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
-//            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
-            }
+            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
+
     }
     public void createLinks(){
         for (String i : distinctIDs) {
