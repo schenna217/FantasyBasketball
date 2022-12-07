@@ -69,7 +69,7 @@ public class BreakoutRoom extends AppCompatActivity {
 
          */
         roomNum = 1;
+        createRoom();
         }
     }
 
-}
