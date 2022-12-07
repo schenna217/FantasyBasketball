@@ -35,9 +35,6 @@
             android:name=".PlayerStatsClass"
             android:exported="false" />
         <activity
-            android:name=".SignUpScreen"
-            android:exported="false" />
-        <activity
             android:name=".ActivePlayerHome"
             android:exported="false" />
         <activity
