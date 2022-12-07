@@ -2,6 +2,7 @@ package com.example.fantasybasketballproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -113,6 +114,8 @@ public abstract class FirstRound extends AppCompatActivity {
         playerList.add(Mitchell);
         playerList.add(Booker);
 
+        Intent myIntent = getIntent();
+        roomNum = myIntent.getIntExtra("roomNum",0);
         playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
     }
 
