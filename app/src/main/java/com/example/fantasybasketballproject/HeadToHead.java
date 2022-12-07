@@ -31,6 +31,8 @@ public class HeadToHead extends AppCompatActivity {
 
         offActions.add("passes");
         offActions.add("shoots");
+        defActions.add("steals");
+        defActions.add("blocks");
 
     }
 
@@ -42,19 +44,18 @@ public class HeadToHead extends AppCompatActivity {
         while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
             if(teamOnePossession) {
-//                for( int i = 0; i < defActions.size(); i++){
-//                  for(int k = 0; k < offActions.size(); k++)
-//                    int randPlayer = Math.random()*draftNums.size()+1;
-//                    int rand
-//                }
+                int randPlayer = Math.random()*draftNums.size()+1;
+                int randOffNum = (int) (Math.random()*offActions.size()+1);
+                int rand
+
 
 
             }
             return "done";
 
-//            if(!teamOnePossession) {
-//
-//            }
+            if(!teamOnePossession) {
+
+            }
         }
     return "poop";
     }
