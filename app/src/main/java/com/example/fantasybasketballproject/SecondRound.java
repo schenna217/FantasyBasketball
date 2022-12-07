@@ -28,8 +28,13 @@ public class SecondRound extends AppCompatActivity {
         Player Mobley = new Player(85, "Evan Mobley", "power forward", "1630596", "");
         Player Towns = new Player(90, "Karl-Anthony Towns", "power forward", "1626157", "");
         Player Williamson = new Player(90, "Zion Williamson", "power forward", "1629627", "");
-
-
+        Player Akoumpo = new Player(95, "Giannis Antetokounmpo", "power forward", "203507", "");
+        Player Leonard = new Player(90, "Kawhi Leonard", "small forward", "202695", "");
+        Player James = new Player(95, "Lebron James", "small forward", "2544", "");
+        Player Tatum = new Player(95, "Jayson Tatum", "small forward", "1628639", "");
+        Player Derozan = new Player(90, "Demar Derozan", "small forward", "201942", "");
+        Player Middleton = new Player(90, "Khris Middleton", "small forward", "203114", "");
+        Player Ingram = new Player(85, "Brandon Ingram", "small forward", "1627742", "");
 
 
 

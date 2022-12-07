@@ -90,7 +90,6 @@ public abstract class FirstRound extends AppCompatActivity {
         Player Paul = new Player(85, "Chris Paul", "point guard", "101108", imageLinks.get(8));
         Player Thompson = new Player(85, "Jalen Green", "shooting guard", "202691", imageLinks.get(9));
         Player Green = new Player(85, "Jalen Green", "shooting guard", "1630224", imageLinks.get(10));
-        Player Akoumpo = new Player(95, "Giannis Antetokounmpo", "power forward", "203507", imageLinks.get(11));
         Player Beal = new Player(90, "Bradley Beal", "shooting guard", "203078", imageLinks.get(12));
         Player Lavine = new Player(90, "Zach Lavine", "shooting guard", "203897", imageLinks.get(13));
         Player Edwards = new Player(85, "Anthony Edwards", "shooting guard", "1630162", imageLinks.get(14));
@@ -109,7 +108,6 @@ public abstract class FirstRound extends AppCompatActivity {
         playerList.add(Paul);
         playerList.add(Thompson);
         playerList.add(Green);
-        playerList.add(Akoumpo);
         playerList.add(Beal);
         playerList.add(Lavine);
         playerList.add(Edwards);
