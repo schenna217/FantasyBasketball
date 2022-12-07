@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,17 +24,29 @@ public class HeadToHead extends AppCompatActivity {
     private double playerPasses, playerRebounds;
     ArrayList<String> offActions = new ArrayList<String>();
     ArrayList<String> defActions = new ArrayList<String>();
+    TextView gameUpdates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_head_to_head);
 
-
         offActions.add("passes");
         offActions.add("shoots");
+
         defActions.add("steals");
         defActions.add("blocks");
+
+        gameUpdates = findViewById(R.id.gameUpdates);
+
+        String test = "Miheer";
+        // set value to the given TextView
+        gameUpdates.setText(test);
+
+        // to perform the movement action
+        // Moves the cursor or scrolls to the
+        // top or bottom of the document
+        gameUpdates.setMovementMethod(new ScrollingMovementMethod());
 
     }
 
@@ -43,14 +57,16 @@ public class HeadToHead extends AppCompatActivity {
 
         while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
-//            if(teamOnePossession) {
-//                int randPlayer = Math.random()*draftNums.size()+1;
+            if(teamOnePossession) {
+//                int randOffPlayer = Math.random()*draftNumsTeamOne.size()+1;
 //                int randOffNum = (int) (Math.random()*offActions.size()+1);
-//                int rand;
 //
-//
-//
-//            }
+//                int randDefPlayer = Math.random()*draftNumsTeamTwo.size()+1;
+//                int randDef = (int) (Math.random()*offActions.size()+1);
+
+
+
+            }
             return "done";
 
 //            if(!teamOnePossession) {
