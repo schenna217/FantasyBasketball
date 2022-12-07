@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.FantasyBasketballProject">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bm_hanna"
+        android:text="Sign up for"
+        android:textSize="32dp"
+        android:translationY="90dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/esp_ital"
+        android:text="FANTASYMess!"
+        android:textColor="@color/orangeRed"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:translationY="90dp" />
+
+    <EditText
+        android:id="@+id/SUemail"
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bm_hanna"
+        android:hint="EMAIL ADDRESS"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationY="130dp" />
+
+    <EditText
+        android:id="@+id/SUusername"
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bm_hanna"
+        android:hint="USERNAME"
+        android:paddingLeft="10dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationY="170dp" />
+
+    <EditText
+        android:id="@+id/SUpassword"
+        android:layout_width="303dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bm_hanna"
+        android:hint="PASSWORD"
+        android:paddingLeft="10dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationY="210dp" />
+
+    <Button
+        android:id="@+id/SUsignup"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#D9D9D9"
+        android:fontFamily="@font/esp_ital"
+        android:onClick="signUpClicked"
+        android:text="Sign Up"
+        android:background="@color/orangeRed"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:translationY="250dp" />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
