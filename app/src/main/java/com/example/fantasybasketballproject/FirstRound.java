@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class FirstRound extends AppCompatActivity {
+public class FirstRound extends AppCompatActivity {
     private String Lamelo = "1630163";
     private String Damian = "203081";
     private String Kyrie = "202681";
@@ -47,8 +47,6 @@ public abstract class FirstRound extends AppCompatActivity {
     ArrayList<Player> playerList = new ArrayList<Player>();
     List<String> imageLinks = new ArrayList<String>(18);
 
-
-
     // add data below
 
 
@@ -60,7 +58,7 @@ public abstract class FirstRound extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     // you are using firebase not firestore.  The code is different
-    DatabaseReference playerName;   // this is never instantiated.  This is why its crashing
+    DatabaseReference playerName = database.getReference();  // this is never instantiated.  This is why its crashing
     DatabaseReference playersRef;
 
     public ArrayList<Player> getPlayerList() {
@@ -72,11 +70,9 @@ public abstract class FirstRound extends AppCompatActivity {
 
     List<String> draftList;
     int roomNum;
-    int turnNum;
 
     ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10;
     ImageView imageView11, imageView12, imageView13, imageView14, imageView15, imageView16;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +117,9 @@ public abstract class FirstRound extends AppCompatActivity {
         Intent myIntent = getIntent();
         roomNum = myIntent.getIntExtra("roomNum",0);
         playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
+
+
+        //updateRoom();
     }
 
 
@@ -143,9 +142,7 @@ public abstract class FirstRound extends AppCompatActivity {
         ImageView image15 = findViewById(R.id.imageView15);
         ImageView image16 = findViewById(R.id.imageView16);
 
-        Collections.shuffle(playerList);
-
-
+        //Collections.shuffle(playerList);
         Log.i("KOVOUR", imageLinks.toString());
         for(Player i : playerList) {
             Picasso.get().load(playerList.get(0).getImageLink()).into(image1);
@@ -165,9 +162,6 @@ public abstract class FirstRound extends AppCompatActivity {
             Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
 //            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
             }
-
-
-
     }
     public void createLinks(){
         for (String i : distinctIDs) {
@@ -181,7 +175,7 @@ public abstract class FirstRound extends AppCompatActivity {
 
     }
 
-            }
+}
 
 
 

@@ -36,7 +36,7 @@ public class BreakoutRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breakout_room);
         draftList = new ArrayList<>();
-        createRoom();
+
     }
     public void createRoom()
     {
