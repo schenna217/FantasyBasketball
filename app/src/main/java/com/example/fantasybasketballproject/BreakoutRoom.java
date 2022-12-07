@@ -47,7 +47,7 @@ public class BreakoutRoom extends AppCompatActivity {
     }
 
     public void setRoom(View v) {
-        switch (v.getId()) {
+        /*switch (v.getId()) {
             case R.id.button10:
                 roomNum = 4;
                 createRoom();
@@ -66,6 +66,9 @@ public class BreakoutRoom extends AppCompatActivity {
                 break;
             default:
                 throw new RuntimeException("Unknow button ID");
+
+         */
+        roomNum = 1;
         }
     }
 
