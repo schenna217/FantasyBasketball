@@ -112,67 +112,51 @@ public abstract class FirstRound extends AppCompatActivity {
         playerList.add(Brown);
         playerList.add(Mitchell);
         playerList.add(Booker);
+
+        playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
     }
 
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.imageButton:
-                imageButton = findViewById(R.id.imageButton);
-                break;
-            case R.id.imageButton2:
-                imageButton = findViewById(R.id.imageButton2);
-                break;
-            case R.id.imageButton3:
-                imageButton = findViewById(R.id.imageButton3);
-                break;
-        }
-        Log.d("Button Num", "button");
-    }
-        public void arrangePlayers() {
+    public void arrangePlayers() {
 
-            ImageView image1 = findViewById(R.id.imageView1);
-            ImageView image2 = findViewById(R.id.imageView2);
-            ImageView image3 = findViewById(R.id.imageView3);
-            ImageView image4 = findViewById(R.id.imageView4);
-            ImageView image5 = findViewById(R.id.imageView5);
-            ImageView image6 = findViewById(R.id.imageView6);
-            ImageView image7 = findViewById(R.id.imageView7);
-            ImageView image8 = findViewById(R.id.imageView8);
-            ImageView image9 = findViewById(R.id.imageView9);
-            ImageView image10 = findViewById(R.id.imageView10);
-            ImageView image11 = findViewById(R.id.imageView11);
-            ImageView image12 = findViewById(R.id.imageView12);
-            ImageView image13 = findViewById(R.id.imageView13);
-            ImageView image14 = findViewById(R.id.imageView14);
-            ImageView image15 = findViewById(R.id.imageView15);
-            ImageView image16 = findViewById(R.id.imageView16);
+        ImageView image1 = findViewById(R.id.imageView1);
+        ImageView image2 = findViewById(R.id.imageView2);
+        ImageView image3 = findViewById(R.id.imageView3);
+        ImageView image4 = findViewById(R.id.imageView4);
+        ImageView image5 = findViewById(R.id.imageView5);
+        ImageView image6 = findViewById(R.id.imageView6);
+        ImageView image7 = findViewById(R.id.imageView7);
+        ImageView image8 = findViewById(R.id.imageView8);
+        ImageView image9 = findViewById(R.id.imageView9);
+        ImageView image10 = findViewById(R.id.imageView10);
+        ImageView image11 = findViewById(R.id.imageView11);
+        ImageView image12 = findViewById(R.id.imageView12);
+        ImageView image13 = findViewById(R.id.imageView13);
+        ImageView image14 = findViewById(R.id.imageView14);
+        ImageView image15 = findViewById(R.id.imageView15);
+        ImageView image16 = findViewById(R.id.imageView16);
+
+        Collections.shuffle(playerList);
 
 
-
-            Collections.shuffle(playerList);
-
-
-            Log.i("KOVOUR", imageLinks.toString());
-            for(Player i : playerList) {
-
-                Picasso.get().load(playerList.get(0).getImageLink()).into(image1);
-                Picasso.get().load(playerList.get(1).getImageLink()).into(image2);
-                Picasso.get().load(playerList.get(2).getImageLink()).into(image3);
-                Picasso.get().load(playerList.get(3).getImageLink()).into(image4);
-                Picasso.get().load(playerList.get(4).getImageLink()).into(image5);
-                Picasso.get().load(playerList.get(5).getImageLink()).into(image6);
-                Picasso.get().load(playerList.get(6).getImageLink()).into(image7);
-                Picasso.get().load(playerList.get(7).getImageLink()).into(image8);
-                Picasso.get().load(playerList.get(8).getImageLink()).into(image9);
-                Picasso.get().load(playerList.get(9).getImageLink()).into(image10);
-                Picasso.get().load(playerList.get(10).getImageLink()).into(image11);
-                Picasso.get().load(playerList.get(11).getImageLink()).into(image12);
-                Picasso.get().load(playerList.get(12).getImageLink()).into(image13);
-                Picasso.get().load(playerList.get(13).getImageLink()).into(image14);
-                Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
-                Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
-
+        Log.i("KOVOUR", imageLinks.toString());
+        for(Player i : playerList) {
+            Picasso.get().load(playerList.get(0).getImageLink()).into(image1);
+            Picasso.get().load(playerList.get(1).getImageLink()).into(image2);
+            Picasso.get().load(playerList.get(2).getImageLink()).into(image3);
+            Picasso.get().load(playerList.get(3).getImageLink()).into(image4);
+            Picasso.get().load(playerList.get(4).getImageLink()).into(image5);
+            Picasso.get().load(playerList.get(5).getImageLink()).into(image6);
+            Picasso.get().load(playerList.get(6).getImageLink()).into(image7);
+            Picasso.get().load(playerList.get(7).getImageLink()).into(image8);
+            Picasso.get().load(playerList.get(8).getImageLink()).into(image9);
+            Picasso.get().load(playerList.get(9).getImageLink()).into(image10);
+            Picasso.get().load(playerList.get(10).getImageLink()).into(image11);
+            Picasso.get().load(playerList.get(11).getImageLink()).into(image12);
+            Picasso.get().load(playerList.get(12).getImageLink()).into(image13);
+            Picasso.get().load(playerList.get(13).getImageLink()).into(image14);
+            Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
+            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
             }
 
 

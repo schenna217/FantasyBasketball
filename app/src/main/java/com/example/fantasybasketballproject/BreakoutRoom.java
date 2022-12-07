@@ -40,37 +40,32 @@ public class BreakoutRoom extends AppCompatActivity {
         draftList = new ArrayList<>();
 
     }
-    public void createRoom(View view)
+    public void createRoom()
     {
+        roomRef.child("room" + roomNum).setValue(playerList);
+        Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
+        startActivity(intent);
 
     }
-    public void room1(View view)
-    {
-        roomNum = 1;
-        createRoom(view);
-        Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
-        startActivity(intent);
-    }
-    public void room2(View view)
-    {
-        roomNum = 2;
-        createRoom(view);
-        Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
-        startActivity(intent);
-    }
-    public void room3(View view)
-    {
-        roomNum = 3;
-        createRoom(view);
-        Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
-        startActivity(intent);
-    }
-    public void room4(View view)
-    {
-        roomNum = 4;
-        createRoom(view);
-        Intent intent = new Intent(BreakoutRoom.this, FirstRound.class);
-        startActivity(intent);
+
+    public void setRoom(View v) {
+        switch (v.getId()) {
+            case R.id.button10:
+                roomNum = 4;
+                break;
+            case R.id.button4:
+                roomNum = 1;
+                break;
+            case R.id.button8:
+                roomNum = 2;
+                break;
+            case R.id.button9:
+                roomNum = 3;
+                break;
+            default:
+                throw new RuntimeException("Unknow button ID");
+        }
+        createRoom();
     }
 
 }
