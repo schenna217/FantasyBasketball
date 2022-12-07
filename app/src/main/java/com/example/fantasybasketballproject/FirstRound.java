@@ -141,6 +141,7 @@ public abstract class FirstRound extends AppCompatActivity {
 
             Log.i("KOVOUR", imageLinks.toString());
             for(Player i : playerList) {
+
                 Picasso.get().load(i.getImageLink()).into(image1);
                 Picasso.get().load(imageLinks.get(2)).into(image2);
                 Picasso.get().load(imageLinks.get(3)).into(image3);
@@ -160,7 +161,7 @@ public abstract class FirstRound extends AppCompatActivity {
 
             }
 
-    public List<String> createLinks(){
+    public void createLinks(){
         for (String i : distinctIDs) {
             String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
             String P2 = ".png";
@@ -168,7 +169,6 @@ public abstract class FirstRound extends AppCompatActivity {
             String createdLink = P1 + i + ".png";
 
             imageLinks.add(createdLink);
-            return imageLinks;
         }
 
     }
