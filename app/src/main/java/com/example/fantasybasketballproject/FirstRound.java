@@ -79,7 +79,7 @@ public class FirstRound extends AppCompatActivity {
         setContentView(R.layout.activity_first_round);
         draftList = new ArrayList<>();
         createLinks();
-        Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", imageLinks.get(0));
+        Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", "");
         Player Lillard = new Player(95, "Damian Lillard", "point guard", "203081", imageLinks.get(1));
         Player Irving = new Player(90, "Kyrie Irving", "point guard", "202681", imageLinks.get(2));
         Player Garland = new Player(85, "Darius Garland", "point guard", "1629636", imageLinks.get(3));
@@ -140,23 +140,23 @@ public class FirstRound extends AppCompatActivity {
         ImageView image16 = findViewById(R.id.imageView16);
 
         Collections.shuffle(playerList);
-        Log.i("KOVOUR", imageLinks.toString());
-            Picasso.get().load(playerList.get(0).getImageLink()).into(image1);
-            Picasso.get().load(playerList.get(1).getImageLink()).into(image2);
-            Picasso.get().load(playerList.get(2).getImageLink()).into(image3);
-            Picasso.get().load(playerList.get(3).getImageLink()).into(image4);
-            Picasso.get().load(playerList.get(4).getImageLink()).into(image5);
-            Picasso.get().load(playerList.get(5).getImageLink()).into(image6);
-            Picasso.get().load(playerList.get(6).getImageLink()).into(image7);
-            Picasso.get().load(playerList.get(7).getImageLink()).into(image8);
-            Picasso.get().load(playerList.get(8).getImageLink()).into(image9);
-            Picasso.get().load(playerList.get(9).getImageLink()).into(image10);
-            Picasso.get().load(playerList.get(10).getImageLink()).into(image11);
-            Picasso.get().load(playerList.get(11).getImageLink()).into(image12);
-            Picasso.get().load(playerList.get(12).getImageLink()).into(image13);
-            Picasso.get().load(playerList.get(13).getImageLink()).into(image14);
-            Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
-            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
+//        Log.i("KOVOUR", imageLinks.toString());
+            Picasso.get().load(imageLinks.get(0)).into(image1);
+            Picasso.get().load(imageLinks.get(1)).into(image2);
+            Picasso.get().load(imageLinks.get(2)).into(image3);
+            Picasso.get().load(imageLinks.get(3)).into(image4);
+            Picasso.get().load(imageLinks.get(4)).into(image5);
+            Picasso.get().load(imageLinks.get(5)).into(image6);
+            Picasso.get().load(imageLinks.get(6)).into(image7);
+            Picasso.get().load(imageLinks.get(7)).into(image8);
+            Picasso.get().load(imageLinks.get(8)).into(image9);
+            Picasso.get().load(imageLinks.get(9)).into(image10);
+            Picasso.get().load(imageLinks.get(10)).into(image11);
+            Picasso.get().load(imageLinks.get(11)).into(image12);
+            Picasso.get().load(imageLinks.get(12)).into(image13);
+            Picasso.get().load(imageLinks.get(13)).into(image14);
+            Picasso.get().load(imageLinks.get(14)).into(image15);
+            Picasso.get().load(imageLinks.get(15)).into(image16);
 
     }
     public void createLinks(){
