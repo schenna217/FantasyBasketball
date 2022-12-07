@@ -1,9 +1,16 @@
 package com.example.fantasybasketballproject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 
 public class HeadToHead extends AppCompatActivity {
@@ -13,14 +20,21 @@ public class HeadToHead extends AppCompatActivity {
     private boolean teamOnePossession;
     private int totalPointsTeamOne, totalPointsTeamTwo, totalAssists, totalRebounds;
     private double playerPasses, playerRebounds;
-
+    ArrayList<String> offActions = new ArrayList<String>();
+    ArrayList<String> defActions = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_head_to_head);
 
+
+        offActions.add("passes");
+        offActions.add("shoots");
+
     }
+
+
 
     public String generatedOutcome () {
         teamOnePossession = tipOff.nextBoolean();
@@ -28,17 +42,21 @@ public class HeadToHead extends AppCompatActivity {
         while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
             if(teamOnePossession) {
-
+//                for( int i = 0; i < defActions.size(); i++){
+//                  for(int k = 0; k < offActions.size(); k++)
+//                    int randPlayer = Math.random()*draftNums.size()+1;
+//                    int rand
+//                }
 
 
             }
             return "done";
 
-            if(!teamOnePossession) {
-
-            }
+//            if(!teamOnePossession) {
+//
+//            }
         }
-
+    return "poop";
     }
 
     public boolean getTeamOnePossession() {

@@ -161,6 +161,9 @@ public abstract class FirstRound extends AppCompatActivity {
 
             }
 
+
+
+    }
     public void createLinks(){
         for (String i : distinctIDs) {
             String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
@@ -172,13 +175,6 @@ public abstract class FirstRound extends AppCompatActivity {
         }
 
     }
-
-
-
-
-
-
-}
 
             }
 
