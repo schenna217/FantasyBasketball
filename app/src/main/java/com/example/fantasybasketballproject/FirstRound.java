@@ -150,7 +150,7 @@ public abstract class FirstRound extends AppCompatActivity {
 
 
 
-            Collections.shuffle(imageLinks);
+            Collections.shuffle(playerList);
 
 
             Log.i("KOVOUR", imageLinks.toString());
