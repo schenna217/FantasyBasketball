@@ -87,8 +87,7 @@ public abstract class FirstRound extends AppCompatActivity {
         Player Young = new Player(90, "Trae Young", "point guard", "1629027", imageLinks.get(5));
         Player Doncic = new Player(95, "Luka Doncic", "point guard", "1629029", imageLinks.get(6));
         Player Curry = new Player(90, "Steph Curry", "point guard", "201939", imageLinks.get(7));
-        Player Paul = new Player(85, "Chris Paul", "point guard", "101108", imageLinks.get(8));
-        Player Thompson = new Player(85, "Jalen Green", "shooting guard", "202691", imageLinks.get(9));
+        Player Thompson = new Player(85, "Klay Thompson", "shooting guard", "202691", imageLinks.get(9));
         Player Green = new Player(85, "Jalen Green", "shooting guard", "1630224", imageLinks.get(10));
         Player Beal = new Player(90, "Bradley Beal", "shooting guard", "203078", imageLinks.get(12));
         Player Lavine = new Player(90, "Zach Lavine", "shooting guard", "203897", imageLinks.get(13));
@@ -105,7 +104,6 @@ public abstract class FirstRound extends AppCompatActivity {
         playerList.add(Young);
         playerList.add(Doncic);
         playerList.add(Curry);
-        playerList.add(Paul);
         playerList.add(Thompson);
         playerList.add(Green);
         playerList.add(Beal);
@@ -158,22 +156,22 @@ public abstract class FirstRound extends AppCompatActivity {
             Log.i("KOVOUR", imageLinks.toString());
             for(Player i : playerList) {
 
-                Picasso.get().load(i.getImageLink()).into(image1);
-                Picasso.get().load(imageLinks.get(2)).into(image2);
-                Picasso.get().load(imageLinks.get(3)).into(image3);
-                Picasso.get().load(imageLinks.get(4)).into(image4);
-                Picasso.get().load(imageLinks.get(5)).into(image5);
-                Picasso.get().load(imageLinks.get(6)).into(image6);
-                Picasso.get().load(imageLinks.get(7)).into(image7);
-                Picasso.get().load(imageLinks.get(8)).into(image8);
-                Picasso.get().load(imageLinks.get(9)).into(image9);
-                Picasso.get().load(imageLinks.get(10)).into(image10);
-                Picasso.get().load(imageLinks.get(11)).into(image11);
-                Picasso.get().load(imageLinks.get(12)).into(image12);
-                Picasso.get().load(imageLinks.get(13)).into(image13);
-                Picasso.get().load(imageLinks.get(14)).into(image14);
-                Picasso.get().load(imageLinks.get(15)).into(image15);
-                Picasso.get().load(imageLinks.get(16)).into(image16);
+                Picasso.get().load(playerList.get(0).getImageLink()).into(image1);
+                Picasso.get().load(playerList.get(1).getImageLink()).into(image2);
+                Picasso.get().load(playerList.get(2).getImageLink()).into(image3);
+                Picasso.get().load(playerList.get(3).getImageLink()).into(image4);
+                Picasso.get().load(playerList.get(4).getImageLink()).into(image5);
+                Picasso.get().load(playerList.get(5).getImageLink()).into(image6);
+                Picasso.get().load(playerList.get(6).getImageLink()).into(image7);
+                Picasso.get().load(playerList.get(7).getImageLink()).into(image8);
+                Picasso.get().load(playerList.get(8).getImageLink()).into(image9);
+                Picasso.get().load(playerList.get(9).getImageLink()).into(image10);
+                Picasso.get().load(playerList.get(10).getImageLink()).into(image11);
+                Picasso.get().load(playerList.get(11).getImageLink()).into(image12);
+                Picasso.get().load(playerList.get(12).getImageLink()).into(image13);
+                Picasso.get().load(playerList.get(13).getImageLink()).into(image14);
+                Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
+                Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
 
             }
 

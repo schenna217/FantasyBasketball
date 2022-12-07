@@ -43,19 +43,19 @@ public class HeadToHead extends AppCompatActivity {
 
         while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
-            if(teamOnePossession) {
-                int randPlayer = Math.random()*draftNums.size()+1;
-                int randOffNum = (int) (Math.random()*offActions.size()+1);
-                int rand;
-
-
-
-            }
+//            if(teamOnePossession) {
+//                int randPlayer = Math.random()*draftNums.size()+1;
+//                int randOffNum = (int) (Math.random()*offActions.size()+1);
+//                int rand;
+//
+//
+//
+//            }
             return "done";
 
-            if(!teamOnePossession) {
-
-            }
+//            if(!teamOnePossession) {
+//
+//            }
         }
     return "poop";
     }
