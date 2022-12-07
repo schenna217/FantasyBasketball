@@ -69,22 +69,8 @@ public abstract class FirstRound extends AppCompatActivity {
     int roomNum;
     int turnNum;
 
-    ImageView imageView1;
-    ImageView imageView2;
-    ImageView imageView3;
-    ImageView imageView4;
-    ImageView imageView5;
-    ImageView imageView6;
-    ImageView imageView7;
-    ImageView imageView8;
-    ImageView imageView9;
-    ImageView imageView10;
-    ImageView imageView11;
-    ImageView imageView12;
-    ImageView imageView13;
-    ImageView imageView14;
-    ImageView imageView15;
-    ImageView imageView16;
+    ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10;
+    ImageView imageView11, imageView12, imageView13, imageView14, imageView15, imageView16;
 
 
     @Override
@@ -131,11 +117,6 @@ public abstract class FirstRound extends AppCompatActivity {
     }
         public void arrangePlayers() {
 
-
-
-
-
-
             ImageView image1 = findViewById(R.id.imageView1);
             ImageView image2 = findViewById(R.id.imageView2);
             ImageView image3 = findViewById(R.id.imageView3);
@@ -160,7 +141,7 @@ public abstract class FirstRound extends AppCompatActivity {
 
             Log.i("KOVOUR", imageLinks.toString());
             for(Player i : playerList) {
-                Picasso.get().load(i.imageLink).into(image1);
+                Picasso.get().load(i.getImageLink()).into(image1);
                 Picasso.get().load(imageLinks.get(2)).into(image2);
                 Picasso.get().load(imageLinks.get(3)).into(image3);
                 Picasso.get().load(imageLinks.get(4)).into(image4);
@@ -178,6 +159,7 @@ public abstract class FirstRound extends AppCompatActivity {
                 Picasso.get().load(imageLinks.get(16)).into(image16);
 
             }
+
     public List<String> createLinks(){
         for (String i : distinctIDs) {
             String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
@@ -188,6 +170,7 @@ public abstract class FirstRound extends AppCompatActivity {
             imageLinks.add(createdLink);
             return imageLinks;
         }
+
     }
 
 
@@ -195,7 +178,7 @@ public abstract class FirstRound extends AppCompatActivity {
 
 
 
-
+}
 
             }
 

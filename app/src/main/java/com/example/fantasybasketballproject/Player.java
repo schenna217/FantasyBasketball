@@ -22,6 +22,15 @@ public class Player implements Parcelable {
     private String position;
     private String imageViewID;
     private String imageID;
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
+
     private String imageLink;
     private String Lamelo = "1630163";
     private String Damian = "203081";
