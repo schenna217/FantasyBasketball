@@ -88,14 +88,14 @@ public abstract class FirstRound extends AppCompatActivity {
         Player Young = new Player(90, "Trae Young", "point guard", "1629027", imageLinks.get(5));
         Player Doncic = new Player(95, "Luka Doncic", "point guard", "1629029", imageLinks.get(6));
         Player Curry = new Player(90, "Steph Curry", "point guard", "201939", imageLinks.get(7));
-        Player Thompson = new Player(85, "Klay Thompson", "shooting guard", "202691", imageLinks.get(9));
-        Player Green = new Player(85, "Jalen Green", "shooting guard", "1630224", imageLinks.get(10));
-        Player Beal = new Player(90, "Bradley Beal", "shooting guard", "203078", imageLinks.get(12));
-        Player Lavine = new Player(90, "Zach Lavine", "shooting guard", "203897", imageLinks.get(13));
-        Player Edwards = new Player(85, "Anthony Edwards", "shooting guard", "1630162", imageLinks.get(14));
-        Player Brown = new Player(90, "Jaylen Brown", "shooting guard", "1627759", imageLinks.get(15));
-        Player Mitchell = new Player(90, "Donovan Mitchell", "shooting guard", "1628378", imageLinks.get(16));
-        Player Booker = new Player(95, "Devin Booker", "shooting guard", "1626164", imageLinks.get(17));
+        Player Thompson = new Player(85, "Klay Thompson", "shooting guard", "202691", imageLinks.get(8));
+        Player Green = new Player(85, "Jalen Green", "shooting guard", "1630224", imageLinks.get(9));
+        Player Beal = new Player(90, "Bradley Beal", "shooting guard", "203078", imageLinks.get(10));
+        Player Lavine = new Player(90, "Zach Lavine", "shooting guard", "203897", imageLinks.get(11));
+        Player Edwards = new Player(85, "Anthony Edwards", "shooting guard", "1630162", imageLinks.get(12));
+        Player Brown = new Player(90, "Jaylen Brown", "shooting guard", "1627759", imageLinks.get(13));
+        Player Mitchell = new Player(90, "Donovan Mitchell", "shooting guard", "1628378", imageLinks.get(14));
+        Player Booker = new Player(95, "Devin Booker", "shooting guard", "1626164", imageLinks.get(15));
         arrangePlayers();
         playerList.add(Ball);
         playerList.add(Lillard);
@@ -159,7 +159,7 @@ public abstract class FirstRound extends AppCompatActivity {
             Picasso.get().load(playerList.get(12).getImageLink()).into(image13);
             Picasso.get().load(playerList.get(13).getImageLink()).into(image14);
             Picasso.get().load(playerList.get(14).getImageLink()).into(image15);
-            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
+//            Picasso.get().load(playerList.get(15).getImageLink()).into(image16);
             }
 
 
