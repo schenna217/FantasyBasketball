@@ -24,6 +24,7 @@ public class Player implements Parcelable {
     private String position;
     private String imageViewID;
     private String imageID;
+    private int owner;
     public @DrawableRes int imageDrawable;
 
     public String getImageLink() {
@@ -65,7 +66,8 @@ public class Player implements Parcelable {
         this.position = position;
         this.imageID = imageID;
         this.imageViewID = "";
-        this.imageLink = "";
+        this.imageLink = imageLink;
+        this.owner = 3;
     }
 
     //For randoms
@@ -102,6 +104,7 @@ public class Player implements Parcelable {
 
     public Player(Parcel parcel) {
         rating = parcel.readInt();
+        owner = parcel.readInt();
         name = parcel.readString();
         position = parcel.readString();
 
@@ -110,6 +113,7 @@ public class Player implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(rating);
+        dest.writeInt(owner);
         dest.writeString(name);
         dest.writeString(position);
     }
