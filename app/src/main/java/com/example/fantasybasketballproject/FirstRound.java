@@ -6,16 +6,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class FirstRound extends AppCompatActivity {
     private String Lamelo = "1630163";
@@ -78,15 +82,22 @@ public class FirstRound extends AppCompatActivity {
         return distinctIDs;
     }
 
-    List<Player> draftList;
+    List<String> draftList;
     int roomNum;
-
+    String userName = "ERIC";
+    List<ImageView> imageList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
         draftList = new ArrayList<>();
+        for (int i = 0;i<16;i++)
+        {
+            draftList.add("-1");
+        }
+
+        imageList = new ArrayList<>();
         createLinks();
         Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", imageLinks.get(0));
         Player Lillard = new Player(95, "Damian Lillard", "point guard", "203081", imageLinks.get(1));
@@ -123,7 +134,7 @@ public class FirstRound extends AppCompatActivity {
         arrangePlayers();
         Intent myIntent = getIntent();
         roomNum = myIntent.getIntExtra("roomNum",0);
-       playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
+       playerName.child("room" + roomNum).child("PlayerList").setValue(draftList);
 
 //        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -131,27 +142,22 @@ public class FirstRound extends AppCompatActivity {
 //            }
 //        });
 
-
+        addRoomsEventListener();
     }
 
 
     public void updateRoom(View view) {
 
-                ImageView image1 = findViewById(view.getId());
-                image1.setVisibility(View.INVISIBLE);
-                playerName.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String value = snapshot.getValue(String.class);
-                        Log.d(TAG, "Value is: " + value);
-                    }
+        ImageView image1 = findViewById(view.getId());
+//        image1.setVisibility(View.INVISIBLE);
+        String str = image1.getResources().getResourceEntryName(view.getId());
+        str = str.replace("imageView", "");
+        Log.d(TAG,str);
+        draftList.set(Integer.parseInt(str)-1,userName);
+        Log.d(TAG,draftList.toString());
+        playerName.setValue(draftList);
+//        Log.d(TAG,view.getId());
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w(TAG, "Failed to read value.", error.toException());
-
-                    }
-                });
 
     }
 
@@ -168,6 +174,36 @@ public class FirstRound extends AppCompatActivity {
         arrangePlayers();
 
     }
+    private void addRoomsEventListener(){
+        playerName = database.getReference("room1").child("PlayerList");
+        playerName.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //show list of rooms
+                Iterable<DataSnapshot> playerName = snapshot.getChildren();
+                for(DataSnapshot snapshot1 : playerName){
+                    String index = snapshot1.getKey();
+//                    Map<String, Object> map = (Map<String, Object>) snapshot1.getValue();
+//                    Log.d(TAG, "Value is: " + map);
+                    Log.d(TAG,index);
+                      String owner = snapshot1.getValue(String.class);
+                    if(!owner.equals("-1"))
+                    {
+                        //String imgView = "R.id.imageView" + index;
+                        ImageView image1 = imageList.get(Integer.parseInt(index));
+                        image1.setVisibility(View.INVISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //error nothing
+            }
+        });
+    }
+
+
 
     public void arrangePlayers() {
 //        ImageView image1 = findViewById(R.id.imageView1);
@@ -190,38 +226,65 @@ public class FirstRound extends AppCompatActivity {
 //        String getFromFirebase = playerName.child("room" + roomNum).child("PlayerList").get();
 
         ImageView image1 = findViewById(R.id.imageView1);
-        ImageView image2 = findViewById(R.id.imageView2);
-        ImageView image3 = findViewById(R.id.imageView3);
-        ImageView image4 = findViewById(R.id.imageView4);
-        ImageView image5 = findViewById(R.id.imageView5);
-        ImageView image6 = findViewById(R.id.imageView6);
-        ImageView image7 = findViewById(R.id.imageView7);
-        ImageView image8 = findViewById(R.id.imageView8);
-        ImageView image9 = findViewById(R.id.imageView9);
-        ImageView image10 = findViewById(R.id.imageView10);
-        ImageView image11 = findViewById(R.id.imageView11);
-        ImageView image12 = findViewById(R.id.imageView12);
-        ImageView image13 = findViewById(R.id.imageView13);
-        ImageView image14 = findViewById(R.id.imageView14);
-        ImageView image15 = findViewById(R.id.imageView15);
-        ImageView image16 = findViewById(R.id.imageView16);
+        imageList.add(findViewById(R.id.imageView1));
+        imageList.add(findViewById(R.id.imageView2));
 
-            Picasso.get().load(imageLinks.get(0)).into(image1);
-            Picasso.get().load(imageLinks.get(1)).into(image2);
-            Picasso.get().load(imageLinks.get(2)).into(image3);
-            Picasso.get().load(imageLinks.get(3)).into(image4);
-            Picasso.get().load(imageLinks.get(4)).into(image5);
-            Picasso.get().load(imageLinks.get(5)).into(image6);
-            Picasso.get().load(imageLinks.get(6)).into(image7);
-            Picasso.get().load(imageLinks.get(7)).into(image8);
-            Picasso.get().load(imageLinks.get(8)).into(image9);
-            Picasso.get().load(imageLinks.get(9)).into(image10);
-            Picasso.get().load(imageLinks.get(10)).into(image11);
-            Picasso.get().load(imageLinks.get(11)).into(image12);
-            Picasso.get().load(imageLinks.get(12)).into(image13);
-            Picasso.get().load(imageLinks.get(13)).into(image14);
-            Picasso.get().load(imageLinks.get(14)).into(image15);
-            Picasso.get().load(imageLinks.get(15)).into(image16);
+        imageList.add(findViewById(R.id.imageView3));
+
+        imageList.add(findViewById(R.id.imageView4));
+
+        imageList.add(findViewById(R.id.imageView5));
+
+        imageList.add(findViewById(R.id.imageView6));
+
+        imageList.add(findViewById(R.id.imageView7));
+
+        imageList.add(findViewById(R.id.imageView8));
+
+        imageList.add(findViewById(R.id.imageView9));
+
+        imageList.add(findViewById(R.id.imageView10));
+
+        imageList.add(findViewById(R.id.imageView11));
+        imageList.add(findViewById(R.id.imageView12));
+        imageList.add(findViewById(R.id.imageView13));
+        imageList.add(findViewById(R.id.imageView14));
+        imageList.add(findViewById(R.id.imageView15));
+        imageList.add(findViewById(R.id.imageView16));
+
+
+//        ImageView image2 = findViewById(R.id.imageView2);
+//        ImageView image3 = findViewById(R.id.imageView3);
+//        ImageView image4 = findViewById(R.id.imageView4);
+//        ImageView image5 = findViewById(R.id.imageView5);
+//        ImageView image6 = findViewById(R.id.imageView6);
+//        ImageView image7 = findViewById(R.id.imageView7);
+//        ImageView image8 = findViewById(R.id.imageView8);
+//        ImageView image9 = findViewById(R.id.imageView9);
+//        ImageView image10 = findViewById(R.id.imageView10);
+//        ImageView image11 = findViewById(R.id.imageView11);
+//        ImageView image12 = findViewById(R.id.imageView12);
+//        ImageView image13 = findViewById(R.id.imageView13);
+//        ImageView image14 = findViewById(R.id.imageView14);
+//        ImageView image15 = findViewById(R.id.imageView15);
+//        ImageView image16 = findViewById(R.id.imageView16);
+
+            Picasso.get().load(imageLinks.get(0)).into(imageList.get(0));
+            Picasso.get().load(imageLinks.get(1)).into(imageList.get(1));
+            Picasso.get().load(imageLinks.get(2)).into(imageList.get(2));
+            Picasso.get().load(imageLinks.get(3)).into(imageList.get(3));
+            Picasso.get().load(imageLinks.get(4)).into(imageList.get(4));
+            Picasso.get().load(imageLinks.get(5)).into(imageList.get(5));
+            Picasso.get().load(imageLinks.get(6)).into(imageList.get(6));
+            Picasso.get().load(imageLinks.get(7)).into(imageList.get(7));
+            Picasso.get().load(imageLinks.get(8)).into(imageList.get(8));
+            Picasso.get().load(imageLinks.get(9)).into(imageList.get(9));
+            Picasso.get().load(imageLinks.get(10)).into(imageList.get(10));
+            Picasso.get().load(imageLinks.get(11)).into(imageList.get(11));
+            Picasso.get().load(imageLinks.get(12)).into(imageList.get(12));
+            Picasso.get().load(imageLinks.get(13)).into(imageList.get(13));
+            Picasso.get().load(imageLinks.get(14)).into(imageList.get(14));
+            Picasso.get().load(imageLinks.get(15)).into(imageList.get(15));
 
 
     }
