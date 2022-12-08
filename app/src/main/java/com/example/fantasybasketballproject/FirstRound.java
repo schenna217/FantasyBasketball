@@ -73,7 +73,7 @@ public class FirstRound extends AppCompatActivity {
 
     // you are using firebase not firestore.  The code is different
     DatabaseReference playerName = database.getReference();  // this is never instantiated.  This is why its crashing
-    DatabaseReference playersRef;
+    DatabaseReference turnsRef;
 
     public ArrayList<Player> getPlayerList() {
         return playerList;
@@ -134,7 +134,10 @@ public class FirstRound extends AppCompatActivity {
         arrangePlayers();
         Intent myIntent = getIntent();
         roomNum = myIntent.getIntExtra("roomNum",0);
-       playerName.child("room" + roomNum).child("PlayerList").setValue(draftList);
+        playerName.child("room" + roomNum).child("PlayerList").setValue(draftList);
+        playerName.child("room"+ roomNum).child("NumUsers").push("1");
+        playerName.child("room"+ roomNum).child("turns").push("player" + );
+
 
 //        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -142,12 +145,13 @@ public class FirstRound extends AppCompatActivity {
 //            }
 //        });
 
-        addRoomsEventListener();
+        addPlayersEventListener();
     }
 
 
     public void updateRoom(View view) {
 
+        if()
         ImageView image1 = findViewById(view.getId());
 //        image1.setVisibility(View.INVISIBLE);
         String str = image1.getResources().getResourceEntryName(view.getId());
@@ -174,7 +178,7 @@ public class FirstRound extends AppCompatActivity {
         arrangePlayers();
 
     }
-    private void addRoomsEventListener(){
+    private void addPlayersEventListener(){
         playerName = database.getReference("room1").child("PlayerList");
         playerName.addValueEventListener(new ValueEventListener() {
             @Override
@@ -201,6 +205,10 @@ public class FirstRound extends AppCompatActivity {
                 //error nothing
             }
         });
+    }
+
+    private void turnEventListener(){
+        turnsRef = database.getReference("room" + roomNum).child("turns");
     }
 
 
