@@ -1,17 +1,27 @@
 package com.example.fantasybasketballproject;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 
@@ -35,14 +45,14 @@ public class FirstRound extends AppCompatActivity {
     private String Klay = "202691";
     private String Bradley = "203078";
     private String Zach = "203897";
-    private String Anthony = "1630162";
+    private String Anthony1 = "1630162";
     private String Jaylen = "1627759";
     private String Donovan = "1628378";
     private String Devin = "1626164";
 
 
     public List<String> distinctIDs = Arrays.asList(Lamelo, Damian, Kyrie, Darius, Ja, Trae, Luka, Steph, Chris
-            , Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Donovan, Devin);
+            , Giannis, Jalen, Klay, Bradley, Zach, Anthony1, Jaylen, Donovan, Devin);
 
     ArrayList<Player> playerList = new ArrayList<Player>();
     List<String> imageLinks = new ArrayList<String>();
@@ -53,8 +63,7 @@ public class FirstRound extends AppCompatActivity {
 
     // get method
 
-    ImageButton imageButton;
-
+    GridView gridView;
     // You want to use a static FirebaseHelper var in one activity and keep on calling THAT var, not make a new one
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -69,7 +78,7 @@ public class FirstRound extends AppCompatActivity {
         return distinctIDs;
     }
 
-    List<String> draftList;
+    List<Player> draftList;
     int roomNum;
 
 
@@ -79,7 +88,7 @@ public class FirstRound extends AppCompatActivity {
         setContentView(R.layout.activity_first_round);
         draftList = new ArrayList<>();
         createLinks();
-        Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", "");
+        Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", imageLinks.get(0));
         Player Lillard = new Player(95, "Damian Lillard", "point guard", "203081", imageLinks.get(1));
         Player Irving = new Player(90, "Kyrie Irving", "point guard", "202681", imageLinks.get(2));
         Player Garland = new Player(85, "Darius Garland", "point guard", "1629636", imageLinks.get(3));
@@ -114,13 +123,71 @@ public class FirstRound extends AppCompatActivity {
         arrangePlayers();
         Intent myIntent = getIntent();
         roomNum = myIntent.getIntExtra("roomNum",0);
-        playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
-        //updateRoom();
+       playerName.child("room" + roomNum).child("PlayerList").setValue(playerList);
+
+//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//            }
+//        });
+
 
     }
 
 
+    public void updateRoom(View view) {
+
+                ImageView image1 = findViewById(view.getId());
+                image1.setVisibility(View.INVISIBLE);
+                playerName.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String value = snapshot.getValue(String.class);
+                        Log.d(TAG, "Value is: " + value);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.w(TAG, "Failed to read value.", error.toException());
+
+                    }
+                });
+
+    }
+
+    Button button;
+    public void onButClick(View view){
+        button = findViewById(R.id.button);
+        ImageView image5 = findViewById(R.id.imageView5);
+        if(image5.getVisibility() == View.VISIBLE){
+            image5.setVisibility(View.INVISIBLE);
+        }
+        else{
+            image5.setVisibility(View.VISIBLE);
+        }
+        arrangePlayers();
+
+    }
+
     public void arrangePlayers() {
+//        ImageView image1 = findViewById(R.id.imageView1);
+//        ImageView image2 = findViewById(R.id.imageView2);
+//        ImageView image3 = findViewById(R.id.imageView3);
+//        ImageView image4 = findViewById(R.id.imageView4);
+//        ImageView image5 = findViewById(R.id.imageView5);
+//        ImageView image6 = findViewById(R.id.imageView6);
+//        ImageView image7 = findViewById(R.id.imageView7);
+//        ImageView image8 = findViewById(R.id.imageView8);
+//        ImageView image9 = findViewById(R.id.imageView9);
+//        ImageView image10 = findViewById(R.id.imageView10);
+//        ImageView image11 = findViewById(R.id.imageView11);
+//        ImageView image12 = findViewById(R.id.imageView12);
+//        ImageView image13 = findViewById(R.id.imageView13);
+//        ImageView image14 = findViewById(R.id.imageView14);
+//        ImageView image15 = findViewById(R.id.imageView15);
+//        ImageView image16 = findViewById(R.id.imageView16);
+
+//        String getFromFirebase = playerName.child("room" + roomNum).child("PlayerList").get();
 
         ImageView image1 = findViewById(R.id.imageView1);
         ImageView image2 = findViewById(R.id.imageView2);
@@ -139,8 +206,6 @@ public class FirstRound extends AppCompatActivity {
         ImageView image15 = findViewById(R.id.imageView15);
         ImageView image16 = findViewById(R.id.imageView16);
 
-        Collections.shuffle(playerList);
-//        Log.i("KOVOUR", imageLinks.toString());
             Picasso.get().load(imageLinks.get(0)).into(image1);
             Picasso.get().load(imageLinks.get(1)).into(image2);
             Picasso.get().load(imageLinks.get(2)).into(image3);
@@ -157,6 +222,7 @@ public class FirstRound extends AppCompatActivity {
             Picasso.get().load(imageLinks.get(13)).into(image14);
             Picasso.get().load(imageLinks.get(14)).into(image15);
             Picasso.get().load(imageLinks.get(15)).into(image16);
+
 
     }
     public void createLinks(){

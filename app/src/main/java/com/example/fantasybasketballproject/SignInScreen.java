@@ -50,7 +50,10 @@ public class SignInScreen extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        updateUI();
+//        updateUI();
+        Intent intent = new Intent(SignInScreen.this, BreakoutRoom.class);
+
+        startActivity(intent);
     }
 
     public void updateUI() {

@@ -163,130 +163,166 @@
 
                     <ImageView
                         android:id="@+id/imageView15"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="3"
                         android:layout_column="2"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView11"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="2"
                         android:layout_column="2"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView13"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_row="3"
                         android:layout_column="0"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_row="2"
                         android:layout_column="0"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView12"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="2"
                         android:layout_column="3"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView10"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="2"
                         android:layout_column="1"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView14"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="3"
                         android:layout_column="1"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_row="1"
+                        android:onClick="updateRoom"
+
                         android:layout_column="0"
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView6"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="1"
+                        android:onClick="updateRoom"
+
                         android:layout_column="1"
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView7"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="1"
                         android:layout_column="2"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView16"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="3"
                         android:layout_column="3"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView8"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="1"
                         android:layout_column="3"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="0"
                         android:layout_column="3"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView3"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="0"
                         android:layout_column="2"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView2"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
                         android:layout_row="0"
                         android:layout_column="1"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/imageView1"
-                        android:layout_width="105dp"
+                        android:layout_width="95dp"
                         android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_row="0"
                         android:layout_column="0"
+                        android:onClick="updateRoom"
+
                         tools:srcCompat="@tools:sample/avatars" />
                 </GridLayout>
 
@@ -307,12 +343,38 @@
                     android:id="@+id/textView18"
                     android:layout_width="144dp"
                     android:layout_height="42dp"
-                    android:text="TextView"
+                    android:text="Player 1"
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.486"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.194" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="406dp"
+                    android:layout_height="44dp"
+                    android:fontFamily="@font/bm_hanna"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:text="Guards"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.993" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Button"
+                    android:onClick="onButClick"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView18"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.194" />
 
