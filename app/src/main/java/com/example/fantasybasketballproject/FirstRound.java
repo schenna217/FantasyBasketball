@@ -35,14 +35,14 @@ public class FirstRound extends AppCompatActivity {
     private String Klay = "202691";
     private String Bradley = "203078";
     private String Zach = "203897";
-    private String Anthony = "1630162";
+    private String Anthony1 = "1630162";
     private String Jaylen = "1627759";
     private String Donovan = "1628378";
     private String Devin = "1626164";
 
 
     public List<String> distinctIDs = Arrays.asList(Lamelo, Damian, Kyrie, Darius, Ja, Trae, Luka, Steph, Chris
-            , Giannis, Jalen, Klay, Bradley, Zach, Anthony, Jaylen, Donovan, Devin);
+            , Giannis, Jalen, Klay, Bradley, Zach, Anthony1, Jaylen, Donovan, Devin);
 
     ArrayList<Player> playerList = new ArrayList<Player>();
     List<String> imageLinks = new ArrayList<String>();
@@ -139,7 +139,7 @@ public class FirstRound extends AppCompatActivity {
         ImageView image15 = findViewById(R.id.imageView15);
         ImageView image16 = findViewById(R.id.imageView16);
 
-        Collections.shuffle(playerList);
+       // Collections.shuffle(imageLinks);
 //        Log.i("KOVOUR", imageLinks.toString());
             Picasso.get().load(imageLinks.get(0)).into(image1);
             Picasso.get().load(imageLinks.get(1)).into(image2);

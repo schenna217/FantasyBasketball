@@ -6,13 +6,27 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ThirdRound extends AppCompatActivity {
 
-    ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10;
-    ImageView imageView11, imageView12, imageView13, imageView14, imageView15, imageView16;
+    private String Joel = "203954";
+    private String Rudy = "1627783";
+    private String Nikola = "1631094";
+    private String Al = "203076";
+    private String DeAndre = "1630596";
+    private String Jarrett = "1626157";
+    private String Chet = "1629627";
+    private String Andre = "203507";
 
+
+    List<String> distinctIDs = Arrays.asList(Joel, Rudy, Nikola, Al, DeAndre,Jarrett,
+            Chet, Andre);
+    List<String> imageLinks = new ArrayList<String>();
     ArrayList<Player> playerList = new ArrayList<Player>();
     Player Embiid = new Player(95, "Joel Embiid", "center", "203954", "");
     Player Gobert = new Player(90, "Rudy Gobert", "center", "203497", "");
@@ -55,5 +69,58 @@ public class ThirdRound extends AppCompatActivity {
         playerList.add(Shrek);
         playerList.add(Heisenburg);
         playerList.add(Waluigi);
+    }
+    public void arrangePlayers() {
+
+        ImageView image1 = findViewById(R.id.imageView33);
+        ImageView image2 = findViewById(R.id.imageView34);
+        ImageView image3 = findViewById(R.id.imageView35);
+        ImageView image4 = findViewById(R.id.imageView36);
+        ImageView image5 = findViewById(R.id.imageView37);
+        ImageView image6 = findViewById(R.id.imageView38);
+        ImageView image7 = findViewById(R.id.imageView39);
+        ImageView image8 = findViewById(R.id.imageView40);
+        ImageView image9 = (ImageView)findViewById(R.id.imageView41);
+        image9.setImageDrawable(getResources().getDrawable(R.drawable.baratheon));
+        ImageView image10 = (ImageView)findViewById(R.id.imageView42);
+        image10.setImageDrawable(getResources().getDrawable(R.drawable.defaultskin));
+        ImageView image11 = (ImageView)findViewById(R.id.imageView43);
+        image11.setImageDrawable(getResources().getDrawable(R.drawable.petergriffin));
+        ImageView image12 = (ImageView)findViewById(R.id.imageView44);
+        image12.setImageDrawable(getResources().getDrawable(R.drawable.pitbull));
+        ImageView image13 = (ImageView)findViewById(R.id.imageView45);
+        image13.setImageDrawable(getResources().getDrawable(R.drawable.moesimpsons));
+        ImageView image14 = (ImageView)findViewById(R.id.imageView46);
+        image14.setImageDrawable(getResources().getDrawable(R.drawable.shrek));
+        ImageView image15 = (ImageView)findViewById(R.id.imageView47);
+        image15.setImageDrawable(getResources().getDrawable(R.drawable.walterwhite));
+        ImageView image16 = (ImageView)findViewById(R.id.imageView48);
+        image16.setImageDrawable(getResources().getDrawable(R.drawable.waluigi));
+
+
+
+        // Collections.shuffle(imageLinks);
+//        Log.i("KOVOUR", imageLinks.toString());
+        Picasso.get().load(imageLinks.get(0)).into(image1);
+        Picasso.get().load(imageLinks.get(1)).into(image2);
+        Picasso.get().load(imageLinks.get(2)).into(image3);
+        Picasso.get().load(imageLinks.get(3)).into(image4);
+        Picasso.get().load(imageLinks.get(4)).into(image5);
+        Picasso.get().load(imageLinks.get(5)).into(image6);
+        Picasso.get().load(imageLinks.get(6)).into(image7);
+        Picasso.get().load(imageLinks.get(7)).into(image8);
+
+
+    }
+    public void createLinks() {
+        for (String i : distinctIDs) {
+            String P1 = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/";
+            String P2 = ".png";
+
+            String createdLink = P1 + i + ".png";
+
+            imageLinks.add(createdLink);
+        }
+
     }
 }
