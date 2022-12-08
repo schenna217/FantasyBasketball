@@ -20,8 +20,8 @@ public class HeadToHead extends AppCompatActivity {
     private Random tipOff, playerScores, playerSteals, playerShoots;
     //If true, Team 1 has possession, else Team 2 has possession
     private boolean teamOnePossession;
-    private int totalPointsTeamOne, totalPointsTeamTwo, totalAssists, totalRebounds;
-    private double playerPasses, playerRebounds;
+    private int totalPointsTeamOne, totalPointsTeamTwo;
+    ArrayList<String> allGameUpdates = new ArrayList<String>();
     ArrayList<String> offActions = new ArrayList<String>();
     ArrayList<String> defActions = new ArrayList<String>();
     TextView gameUpdates;
@@ -32,7 +32,7 @@ public class HeadToHead extends AppCompatActivity {
         setContentView(R.layout.activity_head_to_head);
 
         offActions.add("passes");
-        offActions.add("shoots");
+        offActions.add("scores");
 
         defActions.add("steals");
         defActions.add("blocks");
@@ -53,35 +53,67 @@ public class HeadToHead extends AppCompatActivity {
 
 
 
-    public String generatedOutcome () {
+    public void generatedOutcome () {
         teamOnePossession = tipOff.nextBoolean();
 
-        while(totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
+        while (totalPointsTeamOne < 11 && totalPointsTeamTwo < 11) {
 
-//            if(teamOnePossession) {
-//                int randOffPlayer = Math.random()*draftNumsTeamOne.size()+1;
-//                int randOffAction = (int) (Math.random()*offActions.size()+1);
-//                //play=  arrraylist(randint)
-//                //act =  arraylistAction(rand2)
-//                //play.act()
-//
-//                int randDefPlayer = Math.random()*draftNumsTeamTwo.size()+1;
-//                int randDefAction = (int) (Math.random()*offActions.size()+1);
-//                // str avtion
-//
-//                String str = "" +rosterList(randOffPlayer) + actionlIst(randOffAction);
-//                // if(
-//
-//                return str;
-//
-//            }
+            while (teamOnePossession == true) {
+                //int randOffPlayer = (int) (Math.random() * rosterTeamOne.size() + 1);
+                int randOffAction = (int) (Math.random() * offActions.size() + 1);
 
+                //int randDefPlayer = (int) (Math.random() * rosterTeamTwo.size() + 1);
+                int randDefAction = (int) (Math.random() * defActions.size() + 1);
 
-//            if(!teamOnePossession) {
-//
-//            }
+                int offOrDef = (int) (Math.random() * 2 + 1);
+
+                if (offOrDef == 1) {
+                    String generatedOffString = "";
+                    //generatedOffString += randOffPlayer + " " + offActions.get(randOffAction) + " the ball!";
+                    allGameUpdates.add(generatedOffString);
+                    if (randOffAction == 1) {
+                        totalPointsTeamOne += 1;
+                        teamOnePossession = true;
+                    }
+                } else if (offOrDef == 2) {
+                    String generatedDefString = "";
+                    //generatedDefString += randDefPlayer + " " + defActions.get(randDefAction) + " the ball!";
+                    allGameUpdates.add(generatedDefString);
+                    teamOnePossession = false;
+                }
+
+            }
+
+            while (teamOnePossession == false) {
+                //int randOffPlayer = Math.random() * rosterTeamTwo.size() + 1;
+                int randOffAction = (int) (Math.random() * offActions.size() + 1);
+
+                //int randDefPlayer = Math.random() * rosterTeamOne.size() + 1;
+                int randDefAction = (int) (Math.random() * defActions.size() + 1);
+
+                int offOrDef = (int) (Math.random() * 2 + 1);
+
+                if (offOrDef == 1) {
+                    String generatedOffString = "";
+                    //generatedOffString += randOffPlayer + " " + offActions.get(randOffAction) + " the ball!";
+                    allGameUpdates.add(generatedOffString);
+                    if (randOffAction == 1) {
+                        totalPointsTeamOne += 1;
+                        teamOnePossession = true;
+                    }
+                }
+                if (offOrDef == 2) {
+                    String generatedDefString = "";
+                    //generatedDefString += randDefPlayer + " " + defActions.get(randDefAction) + " the ball!";
+                    allGameUpdates.add(generatedDefString);
+                    teamOnePossession = true;
+                }
+
+            }
+
         }
-    return "poop";
+        String end = "End of Game!\nTeam 1: " + totalPointsTeamOne + "\nTeam2: " + totalPointsTeamTwo;
+        allGameUpdates.add(end);
     }
 
     public boolean getTeamOnePossession() {
@@ -130,38 +162,6 @@ public class HeadToHead extends AppCompatActivity {
 
     public void setTotalPointsTeamOne(int totalPointsTeamOne) {
         this.totalPointsTeamOne = totalPointsTeamOne;
-    }
-
-    public int getTotalAssists() {
-        return totalAssists;
-    }
-
-    public void setTotalAssists(int totalAssists) {
-        this.totalAssists = totalAssists;
-    }
-
-    public int getTotalRebounds() {
-        return totalRebounds;
-    }
-
-    public void setTotalRebounds(int totalRebounds) {
-        this.totalRebounds = totalRebounds;
-    }
-
-    public double getPlayerPasses() {
-        return playerPasses;
-    }
-
-    public void setPlayerPasses(double playerPasses) {
-        this.playerPasses = playerPasses;
-    }
-
-    public double getPlayerRebounds() {
-        return playerRebounds;
-    }
-
-    public void setPlayerRebounds(double playerRebounds) {
-        this.playerRebounds = playerRebounds;
     }
 
     public boolean isTeamOnePossession() {
