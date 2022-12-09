@@ -85,6 +85,23 @@ public class FirstRound extends AppCompatActivity {
 
     List<String> draftList1;
     List<String> draftList2;
+
+    public List<String> getDraftList1() {
+        return draftList1;
+    }
+
+    public void setDraftList1(List<String> draftList1) {
+        this.draftList1 = draftList1;
+    }
+
+    public List<String> getDraftList2() {
+        return draftList2;
+    }
+
+    public void setDraftList2(List<String> draftList2) {
+        this.draftList2 = draftList2;
+    }
+
     List<String> players;
     int roomNum;
     String userName = "";
