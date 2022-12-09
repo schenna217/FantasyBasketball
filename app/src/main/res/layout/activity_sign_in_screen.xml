@@ -38,7 +38,7 @@
         android:fontFamily="@font/bm_hanna"
         android:hint="USERNAME"
         android:paddingLeft="10dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
         android:translationY="130dp" />

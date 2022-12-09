@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ public class HeadToHead extends AppCompatActivity {
     //If true, Team 1 has possession, else Team 2 has possession
     private boolean teamOnePossession;
     private int totalPointsTeamOne, totalPointsTeamTwo;
+    Intent getRosters = getIntent();
+    // List<Player> rosterTeamOne = getRosters
     ArrayList<String> allGameUpdates = new ArrayList<String>();
     ArrayList<String> offActions = new ArrayList<String>();
     ArrayList<String> defActions = new ArrayList<String>();
@@ -50,8 +53,9 @@ public class HeadToHead extends AppCompatActivity {
 
     }
 
-
-
+//    public String displayGameUpdates() {
+//
+//    }
 
     public void generatedOutcome () {
         teamOnePossession = tipOff.nextBoolean();
@@ -116,63 +120,26 @@ public class HeadToHead extends AppCompatActivity {
         allGameUpdates.add(end);
     }
 
-    public boolean getTeamOnePossession() {
-        return teamOnePossession;
-    }
+    public boolean getTeamOnePossession() {return teamOnePossession;}
+    public void setTeamOnePossession(boolean teamOnePossession) {this.teamOnePossession = teamOnePossession;}
 
-    public void setTeamOnePossession(boolean teamOnePossession) {
-        this.teamOnePossession = teamOnePossession;
-    }
+    public Random getTipOff() {return tipOff;}
+    public void setTipOff(Random tipOff) {this.tipOff = tipOff;}
 
-    public Random getTipOff() {
-        return tipOff;
-    }
+    public Random getPlayerScores() {return playerScores;}
+    public void setPlayerScores(Random playerScores) {this.playerScores = playerScores;}
 
-    public void setTipOff(Random tipOff) {
-        this.tipOff = tipOff;
-    }
+    public Random getPlayerSteals() {return playerSteals;}
+    public void setPlayerSteals(Random playerSteals) {this.playerSteals = playerSteals;}
 
-    public Random getPlayerScores() {
-        return playerScores;
-    }
+    public Random getPlayerShoots() {return playerShoots;}
+    public void setPlayerShoots(Random playerShoots) {this.playerShoots = playerShoots;}
 
-    public void setPlayerScores(Random playerScores) {
-        this.playerScores = playerScores;
-    }
+    public int getTotalPointsTeamOne() {return totalPointsTeamOne;}
+    public void setTotalPointsTeamOne(int totalPointsTeamOne) {this.totalPointsTeamOne = totalPointsTeamOne;}
 
-    public Random getPlayerSteals() {
-        return playerSteals;
-    }
+    public boolean isTeamOnePossession() {return teamOnePossession;}
 
-    public void setPlayerSteals(Random playerSteals) {
-        this.playerSteals = playerSteals;
-    }
-
-    public Random getPlayerShoots() {
-        return playerShoots;
-    }
-
-    public void setPlayerShoots(Random playerShoots) {
-        this.playerShoots = playerShoots;
-    }
-
-    public int getTotalPointsTeamOne() {
-        return totalPointsTeamOne;
-    }
-
-    public void setTotalPointsTeamOne(int totalPointsTeamOne) {
-        this.totalPointsTeamOne = totalPointsTeamOne;
-    }
-
-    public boolean isTeamOnePossession() {
-        return teamOnePossession;
-    }
-
-    public int getTotalPointsTeamTwo() {
-        return totalPointsTeamTwo;
-    }
-
-    public void setTotalPointsTeamTwo(int totalPointsTeamTwo) {
-        this.totalPointsTeamTwo = totalPointsTeamTwo;
-    }
+    public int getTotalPointsTeamTwo() {return totalPointsTeamTwo;}
+    public void setTotalPointsTeamTwo(int totalPointsTeamTwo) {this.totalPointsTeamTwo = totalPointsTeamTwo;}
 }
