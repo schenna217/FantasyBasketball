@@ -63,13 +63,13 @@ public class FirstRound extends AppCompatActivity {
     List<String> imageLinks = new ArrayList<String>();
 
 
-    // add data below
+    String roomName = "";
+    String role = "";
+    String message = "";
+
+    DatabaseReference messageRef;
 
 
-    // get method
-
-    GridView gridView;
-    // You want to use a static FirebaseHelper var in one activity and keep on calling THAT var, not make a new one
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     // you are using firebase not firestore.  The code is different
@@ -176,7 +176,6 @@ String playersLoc = "";
 
     public void finishRound()
     {
-
         playerName = database.getReference("room"+roomNum).child("PlayerList");
         playerName.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -206,6 +205,7 @@ String playersLoc = "";
 //                        }
                     }
                     Log.d(TAG,draftList1.toString());
+                    Log.d(TAG,draftList2.toString());
                 }
             }
 
