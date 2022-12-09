@@ -43,19 +43,6 @@
         android:textStyle="bold"
         android:translationY="130dp" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="303dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:fontFamily="@font/bm_hanna"
-        android:hint="PASSWORD"
-        android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:translationY="170dp" />
-
     <Button
         android:id="@+id/login"
         android:layout_width="175dp"
@@ -63,24 +50,10 @@
         android:layout_gravity="center"
         android:fontFamily="@font/esp_ital"
         android:onClick="logInClicked"
-        android:text="Log In"
+        android:text="START"
         android:textSize="20dp"
         android:textStyle="bold"
         android:translationY="250dp" />
-
-    <Button
-        android:id="@+id/signup"
-        android:layout_width="175dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:fontFamily="@font/esp_ital"
-        android:onClick="signUpClicked"
-        android:text="Sign Up"
-        android:textColor="@color/babyPowder"
-        android:backgroundTint="@color/blackOlive"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:translationY="300dp" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 
@@ -82,21 +83,25 @@ public class FirstRound extends AppCompatActivity {
         return distinctIDs;
     }
 
-    List<String> draftList;
+    List<String> draftList1;
+    List<String> draftList2;
+    List<String> players;
     int roomNum;
-    String userName = "ERIC";
+    String userName = "";
+    String userName2 = "";
     List<ImageView> imageList;
-
+    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_round);
-        draftList = new ArrayList<>();
+        draftList1 = new ArrayList<>();
+        draftList2 = new ArrayList<>();
+        players = new ArrayList<>();
         for (int i = 0;i<16;i++)
         {
-            draftList.add("-1");
+            players.add("-1");
         }
-
         imageList = new ArrayList<>();
         createLinks();
         Player Ball = new Player(85, "Lamelo Ball", "point guard", "1630163", imageLinks.get(0));
@@ -134,68 +139,122 @@ public class FirstRound extends AppCompatActivity {
         arrangePlayers();
         Intent myIntent = getIntent();
         roomNum = myIntent.getIntExtra("roomNum",0);
-        playerName.child("room" + roomNum).child("PlayerList").setValue(draftList);
-        playerName.child("room"+ roomNum).child("NumUsers").push("1");
-        playerName.child("room"+ roomNum).child("turns").push("player" + );
+        SharedPreferences preferences = getSharedPreferences("PREFS",0);
+        userName = preferences.getString("username", "");
+
+        playerName.child("room" + roomNum).child("PlayerList").setValue(players);
+        playerName.child("room" + roomNum).child("users").setValue(userName);
+
+        //        playerName.child("room"+ roomNum).child("turns").push("player");
 
 
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//            }
-//        });
-
-        addPlayersEventListener();
+        invisibleListener();
+        lookForPlayers();
     }
 
-
+String playersLoc = "";
     public void updateRoom(View view) {
 
-        if()
         ImageView image1 = findViewById(view.getId());
 //        image1.setVisibility(View.INVISIBLE);
         String str = image1.getResources().getResourceEntryName(view.getId());
         str = str.replace("imageView", "");
-        Log.d(TAG,str);
-        draftList.set(Integer.parseInt(str)-1,userName);
-        Log.d(TAG,draftList.toString());
-        playerName.setValue(draftList);
+//        Log.d(TAG,str);
+        players.set(Integer.parseInt(str)-1,userName);
+//        Log.d(TAG,players.toString());
+        playerName.setValue(players);
+        finishRound();
+//        Log.d("1",draftList1.toString());
+//        Log.d("2",draftList2.toString());
+//        playerName = database.getReference().child("room" + roomNum);
+//        draftList.add(playerList.get(Integer.parseInt(str)).getName());
+//        playerName.child(userName + "s List").setValue(draftList);
 //        Log.d(TAG,view.getId());
 
 
     }
 
-    Button button;
-    public void onButClick(View view){
-        button = findViewById(R.id.button);
-        ImageView image5 = findViewById(R.id.imageView5);
-        if(image5.getVisibility() == View.VISIBLE){
-            image5.setVisibility(View.INVISIBLE);
-        }
-        else{
-            image5.setVisibility(View.VISIBLE);
-        }
-        arrangePlayers();
+    public void finishRound()
+    {
 
-    }
-    private void addPlayersEventListener(){
-        playerName = database.getReference("room1").child("PlayerList");
-        playerName.addValueEventListener(new ValueEventListener() {
+        playerName = database.getReference("room"+roomNum).child("PlayerList");
+        playerName.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //show list of rooms
-                Iterable<DataSnapshot> playerName = snapshot.getChildren();
-                for(DataSnapshot snapshot1 : playerName){
-                    String index = snapshot1.getKey();
-//                    Map<String, Object> map = (Map<String, Object>) snapshot1.getValue();
-//                    Log.d(TAG, "Value is: " + map);
-                    Log.d(TAG,index);
-                      String owner = snapshot1.getValue(String.class);
-                    if(!owner.equals("-1"))
+                if(snapshot.exists())
+                {
+                    draftList1.clear();
+                    draftList2.clear();
+                    for(DataSnapshot dss: snapshot.getChildren())
                     {
-                        //String imgView = "R.id.imageView" + index;
-                        ImageView image1 = imageList.get(Integer.parseInt(index));
-                        image1.setVisibility(View.INVISIBLE);
+                        String index = dss.getKey();
+                        String owner = dss.getValue(String.class);
+                        if(owner.equals(userName))
+                        {
+                            draftList1.add(playerList.get(Integer.parseInt(index)).getName());
+                        }
+                        else if(owner.equals(userName2))
+                        {
+                            draftList2.add(playerList.get(Integer.parseInt(index)).getName());
+                        }
+//                        if(draftList1.size() == 2 && draftList2.size()== 2)
+//                        {
+//                            Intent intent = new Intent(FirstRound.this, SecondRound.class);
+//                            intent.putStringArrayListExtra("draftList1", (ArrayList<String>) draftList1);
+//                            intent.putStringArrayListExtra("draftList2", (ArrayList<String>) draftList2);
+//                            startActivity(intent);
+//                        }
+                    }
+                    Log.d(TAG,draftList1.toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //error nothing
+            }
+        });
+    }
+
+    private void lookForPlayers(){
+        turnsRef = database.getReference("room"+roomNum).child("users");
+        turnsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+                    for(DataSnapshot dss: snapshot.getChildren())
+                    {
+                        String user = dss.getValue(String.class);
+                        if(!user.equals(userName))
+                        {
+                            userName2 = user;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void addPlayersEventListener(){
+        playerName = database.getReference("room"+roomNum).child("PlayerList");
+        playerName.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+                    players.clear();
+                    for(DataSnapshot dss: snapshot.getChildren())
+                    {
+                        String playerValue = dss.getValue(String.class);
+                        players.add(playerValue);
+//                        Log.d("from firebase",players.toString());
                     }
                 }
             }
@@ -207,8 +266,33 @@ public class FirstRound extends AppCompatActivity {
         });
     }
 
-    private void turnEventListener(){
-        turnsRef = database.getReference("room" + roomNum).child("turns");
+
+    private void invisibleListener(){
+        playerName = database.getReference("room"+roomNum).child("PlayerList");
+        playerName.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Iterable<DataSnapshot> playerName = snapshot.getChildren();
+                for(DataSnapshot snapshot1 : playerName){
+                    String index = snapshot1.getKey();
+//                    Log.d(TAG,index);
+                    String owner = snapshot1.getValue(String.class);
+                    if(!owner.equals("-1"))
+                    {
+                        //String imgView = "R.id.imageView" + index;
+                        ImageView image1 = imageList.get(Integer.parseInt(index));
+                        image1.setVisibility(View.INVISIBLE);
+                    }
+                    addPlayersEventListener();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
 
