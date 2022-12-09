@@ -145,14 +145,52 @@ public class FirstRound extends AppCompatActivity {
         playerName.child("room" + roomNum).child("PlayerList").setValue(players);
         playerName.child("room" + roomNum).child("users").setValue(userName);
 
-        //        playerName.child("room"+ roomNum).child("turns").push("player");
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
+        {
+            roomName = extras.getString("roomName");
+            if(roomName.equals(userName)){
+                role = "host";
+            }
+            else{
+                role = "guest";
+            }
+        }
 
 
         invisibleListener();
         lookForPlayers();
+//        addRoomEventListener();
     }
+//    private void addRoomEventListener(){
+//        messageRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                //message recieved
+//                if(role.equals("host")){
+//                    if(snapshot.getValue(String.class).contains("guest:")){
+//                        .setEnabled(true);
+//                        Toast.makeText(MainActivity3.this, ""+
+//                                snapshot.getValue(String.class).replace("guest:",""), Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//                else{
+//                    if(snapshot.getValue(String.class).contains("host:")){
+//                        button.setEnabled(true);
+//                        Toast.makeText(MainActivity3.this, ""+
+//                                snapshot.getValue(String.class).replace("host:",""), Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                messageRef.setValue(message);
+//            }
+//        });
+//    }
 
-String playersLoc = "";
     public void updateRoom(View view) {
 
         ImageView image1 = findViewById(view.getId());
@@ -198,10 +236,10 @@ String playersLoc = "";
                         }
 //                        if(draftList1.size() == 2 && draftList2.size()== 2)
 //                        {
-//                            Intent intent = new Intent(FirstRound.this, SecondRound.class);
-//                            intent.putStringArrayListExtra("draftList1", (ArrayList<String>) draftList1);
-//                            intent.putStringArrayListExtra("draftList2", (ArrayList<String>) draftList2);
-//                            startActivity(intent);
+                            Intent intent = new Intent(FirstRound.this, SecondRound.class);
+                            intent.putStringArrayListExtra("draftList1", (ArrayList<String>) draftList1);
+                            intent.putStringArrayListExtra("draftList2", (ArrayList<String>) draftList2);
+                            startActivity(intent);
 //                        }
                     }
                     Log.d(TAG,draftList1.toString());
